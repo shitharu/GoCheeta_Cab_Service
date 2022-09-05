@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>GoCheeta Client Pageeee</title>
+        <title>GoCheeta Client</title>
         
         <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -57,16 +57,6 @@
         <hr>
         
         <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
-                <h3>Add Drivers</h3>
 
         <div id='edit-section'>
                 <form action="process_driverr.jsp" method="post">

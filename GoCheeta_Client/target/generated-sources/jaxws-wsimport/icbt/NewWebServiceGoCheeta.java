@@ -27,48 +27,18 @@ public interface NewWebServiceGoCheeta {
 
     /**
      * 
-     * @param dvr
+     * @param user
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateDriverrs", targetNamespace = "http://icbt/", className = "icbt.UpdateDriverrs")
-    @ResponseWrapper(localName = "updateDriverrsResponse", targetNamespace = "http://icbt/", className = "icbt.UpdateDriverrsResponse")
-    @Action(input = "http://icbt/NewWebServiceGoCheeta/updateDriverrsRequest", output = "http://icbt/NewWebServiceGoCheeta/updateDriverrsResponse")
-    public boolean updateDriverrs(
-        @WebParam(name = "dvr", targetNamespace = "")
-        Driverr dvr);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteDriverrs", targetNamespace = "http://icbt/", className = "icbt.DeleteDriverrs")
-    @ResponseWrapper(localName = "deleteDriverrsResponse", targetNamespace = "http://icbt/", className = "icbt.DeleteDriverrsResponse")
-    @Action(input = "http://icbt/NewWebServiceGoCheeta/deleteDriverrsRequest", output = "http://icbt/NewWebServiceGoCheeta/deleteDriverrsResponse")
-    public boolean deleteDriverrs(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns icbt.Driverr
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDriverr", targetNamespace = "http://icbt/", className = "icbt.GetDriverr")
-    @ResponseWrapper(localName = "getDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrResponse")
-    @Action(input = "http://icbt/NewWebServiceGoCheeta/getDriverrRequest", output = "http://icbt/NewWebServiceGoCheeta/getDriverrResponse")
-    public Driverr getDriverr(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://icbt/", className = "icbt.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://icbt/", className = "icbt.AddUserResponse")
+    @Action(input = "http://icbt/NewWebServiceGoCheeta/addUserRequest", output = "http://icbt/NewWebServiceGoCheeta/addUserResponse")
+    public boolean addUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
 
     /**
      * 
@@ -111,5 +81,50 @@ public interface NewWebServiceGoCheeta {
     public String hello(
         @WebParam(name = "name", targetNamespace = "")
         String name);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns icbt.Driverr
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getDriverr", targetNamespace = "http://icbt/", className = "icbt.GetDriverr")
+    @ResponseWrapper(localName = "getDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrResponse")
+    @Action(input = "http://icbt/NewWebServiceGoCheeta/getDriverrRequest", output = "http://icbt/NewWebServiceGoCheeta/getDriverrResponse")
+    public Driverr getDriverr(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteDriverrs", targetNamespace = "http://icbt/", className = "icbt.DeleteDriverrs")
+    @ResponseWrapper(localName = "deleteDriverrsResponse", targetNamespace = "http://icbt/", className = "icbt.DeleteDriverrsResponse")
+    @Action(input = "http://icbt/NewWebServiceGoCheeta/deleteDriverrsRequest", output = "http://icbt/NewWebServiceGoCheeta/deleteDriverrsResponse")
+    public boolean deleteDriverrs(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param dvr
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateDriverrs", targetNamespace = "http://icbt/", className = "icbt.UpdateDriverrs")
+    @ResponseWrapper(localName = "updateDriverrsResponse", targetNamespace = "http://icbt/", className = "icbt.UpdateDriverrsResponse")
+    @Action(input = "http://icbt/NewWebServiceGoCheeta/updateDriverrsRequest", output = "http://icbt/NewWebServiceGoCheeta/updateDriverrsResponse")
+    public boolean updateDriverrs(
+        @WebParam(name = "dvr", targetNamespace = "")
+        Driverr dvr);
 
 }

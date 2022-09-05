@@ -24,16 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetDriverr_QNAME = new QName("http://icbt/", "getDriverr");
     private final static QName _UpdateDriverrs_QNAME = new QName("http://icbt/", "updateDriverrs");
-    private final static QName _GetDriverrsResponse_QNAME = new QName("http://icbt/", "getDriverrsResponse");
-    private final static QName _HelloResponse_QNAME = new QName("http://icbt/", "helloResponse");
+    private final static QName _AddUser_QNAME = new QName("http://icbt/", "addUser");
     private final static QName _DeleteDriverrsResponse_QNAME = new QName("http://icbt/", "deleteDriverrsResponse");
     private final static QName _GetDriverrResponse_QNAME = new QName("http://icbt/", "getDriverrResponse");
     private final static QName _UpdateDriverrsResponse_QNAME = new QName("http://icbt/", "updateDriverrsResponse");
     private final static QName _GetDriverrs_QNAME = new QName("http://icbt/", "getDriverrs");
     private final static QName _DeleteDriverrs_QNAME = new QName("http://icbt/", "deleteDriverrs");
     private final static QName _AddDriverrResponse_QNAME = new QName("http://icbt/", "addDriverrResponse");
+    private final static QName _GetDriverr_QNAME = new QName("http://icbt/", "getDriverr");
+    private final static QName _GetDriverrsResponse_QNAME = new QName("http://icbt/", "getDriverrsResponse");
+    private final static QName _HelloResponse_QNAME = new QName("http://icbt/", "helloResponse");
+    private final static QName _AddUserResponse_QNAME = new QName("http://icbt/", "addUserResponse");
     private final static QName _Hello_QNAME = new QName("http://icbt/", "hello");
     private final static QName _AddDriverr_QNAME = new QName("http://icbt/", "addDriverr");
 
@@ -69,6 +71,46 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddUser }
+     * 
+     */
+    public AddUser createAddUser() {
+        return new AddUser();
+    }
+
+    /**
+     * Create an instance of {@link UpdateDriverrs }
+     * 
+     */
+    public UpdateDriverrs createUpdateDriverrs() {
+        return new UpdateDriverrs();
+    }
+
+    /**
+     * Create an instance of {@link AddDriverrResponse }
+     * 
+     */
+    public AddDriverrResponse createAddDriverrResponse() {
+        return new AddDriverrResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteDriverrs }
+     * 
+     */
+    public DeleteDriverrs createDeleteDriverrs() {
+        return new DeleteDriverrs();
+    }
+
+    /**
+     * Create an instance of {@link GetDriverrs }
+     * 
+     */
+    public GetDriverrs createGetDriverrs() {
+        return new GetDriverrs();
+    }
+
+    /**
      * Create an instance of {@link GetDriverrsResponse }
      * 
      */
@@ -93,27 +135,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateDriverrs }
-     * 
-     */
-    public UpdateDriverrs createUpdateDriverrs() {
-        return new UpdateDriverrs();
-    }
-
-    /**
      * Create an instance of {@link AddDriverr }
      * 
      */
     public AddDriverr createAddDriverr() {
         return new AddDriverr();
-    }
-
-    /**
-     * Create an instance of {@link AddDriverrResponse }
-     * 
-     */
-    public AddDriverrResponse createAddDriverrResponse() {
-        return new AddDriverrResponse();
     }
 
     /**
@@ -125,19 +151,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteDriverrs }
+     * Create an instance of {@link AddUserResponse }
      * 
      */
-    public DeleteDriverrs createDeleteDriverrs() {
-        return new DeleteDriverrs();
-    }
-
-    /**
-     * Create an instance of {@link GetDriverrs }
-     * 
-     */
-    public GetDriverrs createGetDriverrs() {
-        return new GetDriverrs();
+    public AddUserResponse createAddUserResponse() {
+        return new AddUserResponse();
     }
 
     /**
@@ -149,12 +167,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverr }{@code >}}
+     * Create an instance of {@link User }
      * 
      */
-    @XmlElementDecl(namespace = "http://icbt/", name = "getDriverr")
-    public JAXBElement<GetDriverr> createGetDriverr(GetDriverr value) {
-        return new JAXBElement<GetDriverr>(_GetDriverr_QNAME, GetDriverr.class, null, value);
+    public User createUser() {
+        return new User();
     }
 
     /**
@@ -167,21 +184,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverrsResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddUser }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://icbt/", name = "getDriverrsResponse")
-    public JAXBElement<GetDriverrsResponse> createGetDriverrsResponse(GetDriverrsResponse value) {
-        return new JAXBElement<GetDriverrsResponse>(_GetDriverrsResponse_QNAME, GetDriverrsResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://icbt/", name = "helloResponse")
-    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
-        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://icbt/", name = "addUser")
+    public JAXBElement<AddUser> createAddUser(AddUser value) {
+        return new JAXBElement<AddUser>(_AddUser_QNAME, AddUser.class, null, value);
     }
 
     /**
@@ -236,6 +244,42 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "addDriverrResponse")
     public JAXBElement<AddDriverrResponse> createAddDriverrResponse(AddDriverrResponse value) {
         return new JAXBElement<AddDriverrResponse>(_AddDriverrResponse_QNAME, AddDriverrResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverr }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getDriverr")
+    public JAXBElement<GetDriverr> createGetDriverr(GetDriverr value) {
+        return new JAXBElement<GetDriverr>(_GetDriverr_QNAME, GetDriverr.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverrsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getDriverrsResponse")
+    public JAXBElement<GetDriverrsResponse> createGetDriverrsResponse(GetDriverrsResponse value) {
+        return new JAXBElement<GetDriverrsResponse>(_GetDriverrsResponse_QNAME, GetDriverrsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "helloResponse")
+    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
+        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "addUserResponse")
+    public JAXBElement<AddUserResponse> createAddUserResponse(AddUserResponse value) {
+        return new JAXBElement<AddUserResponse>(_AddUserResponse_QNAME, AddUserResponse.class, null, value);
     }
 
     /**

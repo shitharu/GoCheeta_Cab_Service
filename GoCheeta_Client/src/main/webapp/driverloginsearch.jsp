@@ -1,3 +1,5 @@
+<%@page import="icbt.NewWebServiceGoCheeta"%>
+<%@page import="icbt.NewWebServiceGoCheeta_Service"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -122,36 +124,48 @@ hr {
 }
 </style>
 <body>
+    <%             
+            NewWebServiceGoCheeta_Service service = new NewWebServiceGoCheeta_Service();
+            NewWebServiceGoCheeta proxy = service.getNewWebServiceGoCheetaPort();   
+                       
+    %>
 
-<h2>Signup Form</h2>
+<h2>User Signup Form</h2>
 
 <div>
   
-  <form class="modal-content" action="signup.jsp">
+  <form class="modal-content" action="processusersignup.jsp" method="post">
     <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+      <h1>Register Here,</h1>
+      <p>Please fill in this form to create a new account.</p>
       <hr>
+      
       <label for="fname"><b>First Name</b></label>
       <input type="text" placeholder="First Name" name="fname" required>
 
       <label for="lname"><b>Last Name</b></label>
       <input type="text" placeholder="Last Name" name="lname" required>
-
-
-      <label for="password"><b>Enter password</b></label>
-      <input type="Password" placeholder="Enter password" name="password" required>
       
-       <label for="addr"><b>Enter address</b></label>
-      <input type="text" placeholder="Enter Address" name="addr" required>
+      <label for="lnic"><b>NIC</b></label>
+      <input type="text" placeholder="NIC" name="lnic" required>
       
+       <label for="laddr"><b>Enter address</b></label>
+      <input type="text" placeholder="Enter Address" name="laddr" required>
+      
+      <label for="lemail"><b>Enter Email</b></label>
+      <input type="text" placeholder="Enter Email" name="lemail" required>
 
-      <label for="email"><b>Enter Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-
-      <label for="mobno"><b>mobile no</b></label>
-      <input type="text" placeholder="mobile no" name="mobno" required>
+      <label for="lmobno"><b>Mobile No</b></label>
+      <input type="text" placeholder="mobile no" name="lmobno" required>
+      
+      <label for="lid"><b>ID</b></label>
+      <input type="text" placeholder="id" name="lid" required>
+      
+      <label for="lusername"><b>Username</b></label>
+      <input type="text" placeholder="Enter username" name="lusername" required>
+      
+      <label for="lpassword"><b>Enter password</b></label>
+      <input type="Password" placeholder="Enter password" name="lpassword" required>
 
     
       
@@ -160,7 +174,7 @@ hr {
       </label>
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" class="signupbtn" value="Add">Sign Up</button>
       </div>
 
       <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>

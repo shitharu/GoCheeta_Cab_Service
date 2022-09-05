@@ -14,6 +14,9 @@ icbt\UpdateStudentsResponse.class
 icbt\AddDriverr.class
 icbt\GetDriverr.class
 icbt\DeleteDriverrsResponse.class
+icbt\User.class
+icbt\AddUser.class
+icbt\AddUserResponse.class
 icbt\Hello.class
 icbt\GetDriverrs.class
 icbt\HelloResponse.class

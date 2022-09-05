@@ -137,5 +137,23 @@ public class DBGoCheeta {
         return rowAffected > 0;
     }
     
+    
+    public boolean addUser(User user){
+        int rowAffected = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            rowAffected = statement.executeUpdate("INSERT INTO `users` VALUES ('" + user.getFirstname() + "','" + user.getLastname() + "','" + user.getNic() + "','" + user.getAddress() + "','" + user.getEmail() + "'," + user.getMobile() + "," + user.getId() + ",'" + user.getUsername() + "','" + user.getPassword() + "')");
+           
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return rowAffected > 0;
+    }
+    
 }
 
