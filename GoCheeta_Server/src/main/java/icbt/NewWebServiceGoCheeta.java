@@ -55,11 +55,21 @@ public class NewWebServiceGoCheeta {
         return gocheeta.deleteDriverr(id);
     }
     
-    
-    
     @WebMethod(operationName = "addUser")
     public boolean addUser(@WebParam(name = "user")User user){
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.addUser(user);
+    }
+    
+    @WebMethod(operationName = "getUsers")
+    public List<User> getUsers(){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getUsers();
+    }
+    
+    @WebMethod(operationName = "getUser")
+    public User getUser(@WebParam(name = "id")int id){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getUser(id);
     }
 }

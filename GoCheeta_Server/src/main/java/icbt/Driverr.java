@@ -13,19 +13,22 @@ public class Driverr {
     private String name;
     private int telno;
     private String branch;
+    private String vehicle;
     
     public Driverr(){
         this.id =0;
         this.name ="";
         this.telno =0;
         this.branch ="";
+        this.vehicle ="";
     }
     
-    public Driverr(int id, String name, int telno, String branch){
+    public Driverr(int id, String name, int telno, String branch, String vehicle){
         this.id =id;
         this.name =name;
         this.telno =telno;
         this.branch =branch;
+        this.vehicle= vehicle;
     }
     
     public int getId(){
@@ -59,5 +62,12 @@ public class Driverr {
     public void setBranch(String branch){
         this.branch = branch;
     }
+   
+    public String getVehicle(){
+        return vehicle;
+    }
     
+    public void setVehicle(String vehicle){
+        this.vehicle = vehicle;
+    }
 }

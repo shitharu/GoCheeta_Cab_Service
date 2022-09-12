@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
-    <artifactId>mavenproject2</artifactId>
+    <artifactId>GoCheeta_Client</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -99,24 +99,6 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/mavenproject1/NewWebServiceNew.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName></packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <wsdlLocation>http://localhost:8080/mavenproject1/NewWebServiceNew?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/NewWebServiceNew.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-NewWebServiceNew</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
                                 <wsdlFile>localhost_8080/GoCheeta_Server/NewWebServiceGoCheeta.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
@@ -127,6 +109,24 @@
                             <staleFile>${project.build.directory}/jaxws/stale/NewWebServiceGoCheeta.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-NewWebServiceGoCheeta</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/GoCheeta_Server/WebGoCheeta.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/GoCheeta_Server/WebGoCheeta?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/WebGoCheeta.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-WebGoCheeta</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

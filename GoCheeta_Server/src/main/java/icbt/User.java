@@ -9,6 +9,7 @@ package icbt;
  * @author Tharushi Dhananjika
  */
 public class User {
+    
     private String firstname;
     private String lastname;
     private String nic;
@@ -18,6 +19,19 @@ public class User {
     private int id;
     private String username;
     private String password;
+    
+    public User(){
+        this.firstname ="";
+        this.lastname ="";
+        this.nic ="";
+        this.address ="";
+        this.email ="";
+        this.mobile =0;
+        this.id =0;
+        this.username ="";
+        this.password ="";
+
+    }
 
     public User(String firstname, String lastname, String nic, String address, String email, int mobile, int id, String username, String password) {
         this.firstname = firstname;
@@ -30,6 +44,7 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
 
     public String getFirstname() {
         return firstname;
