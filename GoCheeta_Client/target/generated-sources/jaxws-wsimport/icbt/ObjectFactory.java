@@ -36,6 +36,7 @@ public class ObjectFactory {
     private final static QName _UpdateDriverrsResponse_QNAME = new QName("http://icbt/", "updateDriverrsResponse");
     private final static QName _GetVansOnlyResponse_QNAME = new QName("http://icbt/", "getVansOnlyResponse");
     private final static QName _DeleteDriverrs_QNAME = new QName("http://icbt/", "deleteDriverrs");
+    private final static QName _GetMessages_QNAME = new QName("http://icbt/", "getMessages");
     private final static QName _GetCarsOnly_QNAME = new QName("http://icbt/", "getCarsOnly");
     private final static QName _AddDriverrResponse_QNAME = new QName("http://icbt/", "addDriverrResponse");
     private final static QName _GetDriverr_QNAME = new QName("http://icbt/", "getDriverr");
@@ -58,6 +59,7 @@ public class ObjectFactory {
     private final static QName _GetCars_QNAME = new QName("http://icbt/", "getCars");
     private final static QName _HelloResponse_QNAME = new QName("http://icbt/", "helloResponse");
     private final static QName _GetUsersResponse_QNAME = new QName("http://icbt/", "getUsersResponse");
+    private final static QName _GetMessagesResponse_QNAME = new QName("http://icbt/", "getMessagesResponse");
     private final static QName _AddContactUs_QNAME = new QName("http://icbt/", "addContactUs");
     private final static QName _Hello_QNAME = new QName("http://icbt/", "hello");
 
@@ -170,6 +172,14 @@ public class ObjectFactory {
      */
     public DeleteDriverrs createDeleteDriverrs() {
         return new DeleteDriverrs();
+    }
+
+    /**
+     * Create an instance of {@link GetMessages }
+     * 
+     */
+    public GetMessages createGetMessages() {
+        return new GetMessages();
     }
 
     /**
@@ -349,6 +359,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetMessagesResponse }
+     * 
+     */
+    public GetMessagesResponse createGetMessagesResponse() {
+        return new GetMessagesResponse();
+    }
+
+    /**
      * Create an instance of {@link GetUsersResponse }
      * 
      */
@@ -502,6 +520,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "deleteDriverrs")
     public JAXBElement<DeleteDriverrs> createDeleteDriverrs(DeleteDriverrs value) {
         return new JAXBElement<DeleteDriverrs>(_DeleteDriverrs_QNAME, DeleteDriverrs.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessages }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getMessages")
+    public JAXBElement<GetMessages> createGetMessages(GetMessages value) {
+        return new JAXBElement<GetMessages>(_GetMessages_QNAME, GetMessages.class, null, value);
     }
 
     /**
@@ -700,6 +727,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "getUsersResponse")
     public JAXBElement<GetUsersResponse> createGetUsersResponse(GetUsersResponse value) {
         return new JAXBElement<GetUsersResponse>(_GetUsersResponse_QNAME, GetUsersResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessagesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getMessagesResponse")
+    public JAXBElement<GetMessagesResponse> createGetMessagesResponse(GetMessagesResponse value) {
+        return new JAXBElement<GetMessagesResponse>(_GetMessagesResponse_QNAME, GetMessagesResponse.class, null, value);
     }
 
     /**

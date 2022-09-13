@@ -54,20 +54,24 @@
         %>
         <h1 align="center">GoCheeta</h1>
         <hr>
+       
+        <br><br><br><br>
+        
+        <a href="index.jsp">HOME</a>
+        <h1>This is Data Entry Form</h1>
+        <form method="post" action="dData.jsp">
+        <table>
+            <tr><td>Driver ID</td><td><input type="text" name="id"/></td></tr>
+            <tr><td>Driver Name</td><td><input type="text" name="name"/></td></tr>
+            <tr><td>Driver Tel_No</td><td><input type="text" name="telno"/></td></tr>
+            <tr><td>Driver Branch</td><td><input type="text" name="branch"/></td></tr>
+            <tr><td></td><td><input type="submit" value="Save Record"/></td></tr>
+        </table>
+        </form>
+        <br><br><br><br>
+
         <hr>
         
-        <h3>Add Drivers</h3>
-
-        <div id='edit-section'>
-                <form action="process_driverr.jsp" method="post">
-                   ID : <input type="text" name="id"/>
-                   Name : <input type="text" name="name"/>
-                   Tel_No : <input type="text" name="telno"/>
-                   Branch : <input type="text" name="branch"/>
-                <input type="submit" value="Add">
-            </form>
-        </div>
-        <hr>
         
         <h3>Search, Update and Delete Drivers</h3>
         <div id='control-section'>

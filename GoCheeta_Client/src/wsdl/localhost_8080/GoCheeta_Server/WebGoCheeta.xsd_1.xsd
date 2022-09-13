@@ -44,6 +44,10 @@
 
 <xs:element name="getDriverrsResponse" type="tns:getDriverrsResponse"/>
 
+<xs:element name="getMessages" type="tns:getMessages"/>
+
+<xs:element name="getMessagesResponse" type="tns:getMessagesResponse"/>
+
 <xs:element name="getUser" type="tns:getUser"/>
 
 <xs:element name="getUserResponse" type="tns:getUserResponse"/>
@@ -209,6 +213,25 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getMessages">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMessagesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:contact" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contact">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getCarsOnly">
 <xs:sequence/>
 </xs:complexType>
@@ -300,14 +323,6 @@
 <xs:complexType name="addContactUs">
 <xs:sequence>
 <xs:element name="cnt" type="tns:contact" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="contact">
-<xs:sequence>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:int"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

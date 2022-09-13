@@ -59,7 +59,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #85C1E9;
   padding: 20px;
     
 }
@@ -67,7 +67,7 @@ input[type=submit]:hover {
     
   </head>
 
-  <body>
+  <body style="background-color:#85C1E9;">
       <%             
             WebGoCheeta_Service service = new WebGoCheeta_Service();
             WebGoCheeta proxy = service.getWebGoCheetaPort();   
@@ -107,25 +107,25 @@ input[type=submit]:hover {
     <div class="container">
       <form action="processcontact.jsp" method="post">
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..">
-
-        <label for="startlocation">Start Location</label>
-        <input type="text" id="startlocation" name="startlocation" placeholder="Your start location..">
-   
-        <label for="endlocation">End Location</label>
-        <input type="text" id="endlocation" name="endlocation" placeholder="Your end location..">
+        ID
+        <input type="text" id="id" name="id" placeholder="Your ID.."/>
+          
+        Name
+        <input type="text" id="name" name="name" placeholder="Your name.."/>
         
-        <label for="mobile">Mobile Number</label>
-        <input type="text" id="mobile" name="mobile" placeholder="Your mobile number..">
+        Mobile Number
+        <input type="text" id="mobile" name="mobile" placeholder="Your mobile number.."/>
         
-        <label for="message">Message</label>
+        Message
         <textarea id="message" name="message" placeholder="Write your message in here.." style="height:200px"></textarea>
 
-        <input type="submit" value="SEND">
+        <input type="submit" value="SUBMIT">
 
       </form>
     </div>
+      
+      
+ 
 
   </body>
 

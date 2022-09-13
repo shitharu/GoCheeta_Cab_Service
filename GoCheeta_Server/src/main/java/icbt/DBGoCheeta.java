@@ -38,6 +38,7 @@ public class DBGoCheeta {
             dvr.setTelno(resultSet.getInt("telno"));
             dvr.setBranch(resultSet.getString("branch"));
             
+            
             //System.err.println(resultSet.getString("name"));
             
             
@@ -444,13 +445,8 @@ public class DBGoCheeta {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
             Statement statement = conn.createStatement();
             
-            rowAffected = statement.executeUpdate("INSERT INTO `contactus` VALUES ('" + cnt.getName() + "'," + cnt.getMobile() + ",'" + cnt.getMessage() + "')");
+            rowAffected = statement.executeUpdate("INSERT INTO `messages` VALUES (" + cnt.getId() + ", '" + cnt.getName() + "'," + cnt.getMobile() + ",'" + cnt.getMessage() + "')");
            
-            if(rowAffected!=0){
-                System.out.println("ok");
-            }else{
-                System.out.println("error");
-            }
         }catch(ClassNotFoundException | SQLException e){
             
             System.out.println(e.getMessage());
@@ -459,5 +455,34 @@ public class DBGoCheeta {
         return rowAffected > 0;
     }
     
+    
+    public List<Contact> getMessages(){
+        
+        List<Contact> messages = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM messages");
+    
+            while(resultSet.next()){
+                Contact cnt = new Contact();
+                
+                cnt.setId(resultSet.getInt("id"));
+                cnt.setName(resultSet.getString("name"));
+                cnt.setMobile(resultSet.getInt("mobile"));
+                cnt.setMessage(resultSet.getString("message"));
+                messages.add(cnt);
+            }
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return messages;
+    }
 }
 

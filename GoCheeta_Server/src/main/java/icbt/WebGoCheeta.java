@@ -133,4 +133,10 @@ public class WebGoCheeta {
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.addContactUs(cnt);
     }
+    
+    @WebMethod(operationName = "getMessages")
+    public List<Contact> getMessages(){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getMessages();
+    }
 }

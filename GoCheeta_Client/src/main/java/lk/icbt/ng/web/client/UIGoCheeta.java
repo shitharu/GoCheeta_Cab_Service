@@ -4,6 +4,7 @@
  */
 package lk.icbt.ng.web.client;
 
+import icbt.Contact;
 import icbt.Driverr;
 import java.io.IOException;
 import javax.servlet.jsp.JspWriter;
@@ -36,6 +37,21 @@ public class UIGoCheeta {
         }catch(IOException e){
             //ignore
         }
+    }
+    
+    public static void printMessagesRows(Contact cnt, JspWriter out){
+        try{
+            out.print("<tr>");
+            out.print("<td>" + cnt.getId()+"</td>");
+            out.print("<td>" + cnt.getName()+"</td>");
+            out.print("<td>" + cnt.getMobile()+"</td>");
+            out.print("<td>" + cnt.getMessage()+"</td>");
+
+            out.print("<tr>");
+        }catch(IOException e){
+            //ignore
+        }
+        
     }
     
 }

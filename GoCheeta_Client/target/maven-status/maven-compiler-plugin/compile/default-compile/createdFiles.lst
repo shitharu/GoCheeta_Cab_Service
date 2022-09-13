@@ -41,12 +41,14 @@ lk\icbt\ng\web\client\UIVan.class
 icbt\AddStudentResponse.class
 icbt\GetCarResponse.class
 icbt\Contact.class
+icbt\GetMessagesResponse.class
 icbt\GetUsers.class
 icbt\UpdateStudents.class
 icbt\GetUser.class
 icbt\AddDriverr.class
 icbt\Van.class
 icbt\GetVans.class
+icbt\GetMessages.class
 icbt\Car.class
 icbt\GetDriverrs.class
 icbt\GetCarsOnlyResponse.class
