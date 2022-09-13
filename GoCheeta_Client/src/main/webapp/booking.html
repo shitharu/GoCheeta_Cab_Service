@@ -19,6 +19,33 @@
 
     <link rel="stylesheet" href="service.css"/>
 
+    <style>
+        
+        .about-section {
+          padding: 50px;
+          text-align: center;
+          background-color: #1A5276;
+          color: white;
+        }
+        
+        #table {
+            padding-top: 30px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 75px;
+            }    
+            
+        p{
+            font-size: 18px;
+            color: #0088cc;
+        }
+        
+        td
+        {
+          width: 210px;
+        }
+
+    </style>
   </head>
 
   <body style="background-color:#85C1E9;">
@@ -48,47 +75,67 @@
 
     </nav>
       
-      <a href="carsanddrivers.jsp"><img src="car.png" alt='HTML Home' width="550" height="550"></a>
+    <div class="about-section">
+      <h1>_ BOOKING _</h1>
       
-      <a href="vansanddrivers.jsp"><img src="van.png" alt='ABOUT Home' width="550" height="550"></a>
+      <p>Hello We Are GoCheeta Cab Service.</p>
+      <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
       
+      <h1>What you want?</h1>
+    </div>
      
-      <section>
-      <div class="row">
-        <h3 class="section-heading">BOOKING - GOCHEETA</h3>
-        <br>
-      </div>
+      <br><br>
+    <div id='table'> 
+        <table>
+          <tr>
+            <th><h1>CAR</h1></th>
+            <th></th>
+            <th><h1>VAN</h1></th>
+          </tr>
+          <tr>
+            <td><a href="carsanddrivers.jsp"><img src="car.jpg" alt='HTML Home' width="400" height="400"></a></td>
+            <td><img src="girl.jpg" alt='image' width="400" height="400"></td>
+            <td><a href="vansanddrivers.jsp"><img src="van.jpg" alt='ABOUT Home' width="400" height="400"></a></td>
+          </tr>
+        </table>
+    </div> 
+      
+      
+    <div class="about-section">
+      
+        <div id='table'> 
+        <table>
           
-      <div class="row">
-        <div class="column"><a href="carsanddrivers.jsp">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-car"></i>
-            </div>
-            <h3>CAR</h3>
-            <p>
-                We are GoCheeta Cab Service.
-                 Visit here to reserve the CAR you want.
-            </p>
-          </div></a>
-        </div>
+          <tr>
+            <td>LOGO</td>
+            <td>
+                <a href="index.html">Home</a><br>
+                <a href="booking.html">Booking</a><br>
+                <a href="about.html">About</a><br>
+                <a href="services.html">Services</a><br>
+                <a href="contact.jsp">Contact</a><br>
+            </td>
+            <td>
+                <a href="login.jsp">Login</a><br>
+                <a href="signup.jsp">SignUp</a><br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
           
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-van-shuttle"></i>
-            </div>
-            <h3>VAN</h3>
-            <p>
-                We are GoCheeta Cab Service.
-                 Visit here to reserve the VAN you want.
-            </p>
-          </div>
+        </table>
         </div>
-      </div>
-    </section>
-    
-    
+    </div>
+
   </body>
 
 </html>

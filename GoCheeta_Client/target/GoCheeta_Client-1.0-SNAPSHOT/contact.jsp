@@ -30,6 +30,13 @@
     
     <style>
         
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #1A5276;
+  color: white;
+}
+       
 input[type=text], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
@@ -124,7 +131,14 @@ input[type=submit]:hover {
       </form>
     </div>
       
+    <div class="about-section">
+      <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
       
+      <p>aaaaaaaaaaaaaaaaaaaaa</p>
+      <p>aaaaaaaaaaaaaaaaaaaaa</p>
+      
+      <h1>bbbbbbbbbbbbbbbbbbbbbb</h1>
+    </div>
  
 
   </body>

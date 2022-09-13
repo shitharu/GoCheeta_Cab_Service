@@ -27,6 +27,13 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
         
         <style>
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #4d001f;
+  color: white;
+}
+        
 * {
 margin: 0px;
 padding: 0px;
@@ -104,7 +111,9 @@ background-color: #FF007F;
                 padding-right: 20px;
                 padding-bottom: 5px;
                 padding-left: 40px;
+                outline-style: solid;
                 }
+                
         </style>
         
     </head>
@@ -170,8 +179,8 @@ background-color: #FF007F;
         </div>
             <h3 align="center">DRIVER DETAILS</h3>
             <br>
-            <h5 id='msg-section'><b>WELCOME.. You can call any Van driver's mobile number, for your travel.</b></h5>
-            <h5 id='msg-section'><b>They are register in one of their branches, but they are ready to come to any place for the tours you call.
+            <h5 id='msg-section'><b>WELCOME.. You can call any Van driver's mobile number, for your travel.
+                    <br><br>They are register in one of their branches, but they are ready to come to any place for the tours you call.
                 If they cannot be contacted at that moment, someone else will. Thank You ..</b></h5>
             <div id='result-section'>
             <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
@@ -202,5 +211,15 @@ background-color: #FF007F;
                         $('#vans').DataTable();
                      });
                 </script>
+                
+                
+        <div class="about-section">
+          <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
+
+          <p>aaaaaaaaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaaaaaaaa</p>
+
+          <h1>bbbbbbbbbbbbbbbbbbbbbb</h1>
+        </div>
     </body>
 </html>
