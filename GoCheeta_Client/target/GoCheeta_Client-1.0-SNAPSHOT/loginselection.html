@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="navbar.css" />
+
+    <title>Home</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="service.css"/>
+    
+<style>
+    
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #1A5276;
+  color: white;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    }    
+
+p{
+    font-size: 18px;
+    color: #0088cc;
+}
+
+td{
+  width: 210px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+::selection{
+  color: #000;
+  background: #fff;
+}
+.img{
+  width: 100%;
+  height: 115vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.center .title{
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+</style>
+
+  </head>
+
+  <body>
+
+    <nav>
+
+        <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
+        
+      <div class="heading">
+
+          <a href="index.html"><i class="fa fa-home"></i></a>
+          <h4>GoCheeta</h4>
+
+      </div>
+
+      <ul class="nav-links">
+
+        <li><a class="active" href="index.html">Home</a></li>
+        
+        <li><a href="booking.html">Booking</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="services.html">Services</a></li>
+
+        <li><a href="contact.jsp">Contact</a></li>
+
+      </ul>
+
+    </nav>
+      
+    <div class="img"><img src="car2.jpg" alt="Taxi Image" style="width:1349px;height:800px;"></div>
+      <div class="center">
+        <div class="btns">
+            <button><a href="loginother.html">Other User</a></button>
+            <button><a href="logindriver.html">Driver</a></button>
+            <button><a href="loginadmin.html">Admin</a></button>
+      </div>
+    </div>  
+
+    <div class="about-section">
+        
+        <br><br>
+      
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <a href="index.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Home<br>
+                <a href="booking.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Booking<br>
+                <a href="about.html"><i class="fa-regular fa-hand" ></i></a> &nbsp About<br>
+                <a href="services.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Services<br>
+                <a href="contact.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Contact Us<br>
+            </td>
+            <td>
+                <a href="login.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Login<br>
+                <a href="signup.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Sign Up<br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    
+  </body>
+
+</html>
+
+

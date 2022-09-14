@@ -15,6 +15,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
     
+    <link rel="stylesheet" href="service.css"/>
+    
 <style>
     
 .about-section {
@@ -22,6 +24,22 @@
   text-align: center;
   background-color: #1A5276;
   color: white;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    }    
+
+p{
+    font-size: 18px;
+    color: #0088cc;
+}
+
+td{
+  width: 210px;
 }
 
 *{
@@ -35,9 +53,8 @@
   background: #fff;
 }
 .img{
-  background: url('img3.jpg')no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 115vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -85,18 +102,7 @@
   outline: none;
   transition: all 0.3s ease;
 }
-.center .btns button:first-child{
-  color: #fff;
-  background: none;
-}
-.btns button:first-child:hover{
-  background: white;
-  color: black;
-}
-.center .btns button:last-child{
-  background: white;
-  color: black;
-}
+
 </style>
 
   </head>
@@ -105,6 +111,8 @@
 
     <nav>
 
+        <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
+        
       <div class="heading">
 
           <a href="index.html"><i class="fa fa-home"></i></a>
@@ -128,31 +136,51 @@
 
     </nav>
       
-    <div class="img"><img src="taxi.jpg" style="width:1349px;height:800px;"></div>
+    <div class="img"><img src="taxi1.jpg" alt="Taxi Image" style="width:1349px;height:800px;"></div>
       <div class="center">
-          <div class="title">HELLO ....</div>
+        <div class="title">HELLO</div>
+        <div class="sub_title">WELCOME</div>
         <div class="title">We are GoCheeta Cab Service</div>
-        <div class="sub_title">WELCOME ....</div>
+        <br><br><br><br>
         <div class="btns">
-            <button><a href="login.html">LOGIN</a></button>
-          <button><a href="#.html">SIGN UP</a></button>
-        </div>
+        <button><a href="loginselection.html">LOGIN</a></button>
+        <button><a href="#.html">SIGN UP</a></button>
+      </div>
     </div>  
 
     <div class="about-section">
-      <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
+        
+        <br><br>
       
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      
-      <h1>bbbbbbbbbbbbaabbbbbbbbbb</h1>
-      
-      <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
-      
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      
-      <h1>bbbbbbbbbbbbaabbbbbbbbbb</h1>
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <a href="index.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Home<br>
+                <a href="booking.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Booking<br>
+                <a href="about.html"><i class="fa-regular fa-hand" ></i></a> &nbsp About<br>
+                <a href="services.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Services<br>
+                <a href="contact.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Contact Us<br>
+            </td>
+            <td>
+                <a href="login.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Login<br>
+                <a href="signup.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Sign Up<br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
+        </table>
+        </div>
     </div>
     
   </body>

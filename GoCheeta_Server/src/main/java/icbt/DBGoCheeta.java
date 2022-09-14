@@ -89,7 +89,7 @@ public class DBGoCheeta {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
             Statement statement = conn.createStatement();
             
-            rowAffected = statement.executeUpdate("INSERT INTO `driverrs` VALUES (" + dvr.getId() + ",'" + dvr.getName() + "'," + dvr.getTelno() + ",'" + dvr.getBranch() + "')");
+            rowAffected = statement.executeUpdate("INSERT INTO `driverrs` VALUES (" + dvr.getId() + ",'" + dvr.getName() + "'," + dvr.getTelno() + ",'" + dvr.getBranch() + "','" + dvr.getVehicle()+ "')");
            
         }catch(ClassNotFoundException | SQLException e){
             
@@ -427,6 +427,42 @@ public class DBGoCheeta {
             Statement statement = conn.createStatement();
 
             String sql = "SELECT * FROM users WHERE users.email = '"+email+"' AND users.password = '"+password+"';";
+            ResultSet rs = statement.executeQuery(sql);
+            return rs.next();
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            
+            System.out.print(e.getMessage());
+            return false;
+        }
+    }
+    
+    public boolean authCustomerD(String email, String password) {
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+
+            String sql = "SELECT * FROM driverrs WHERE driverrs.email = '"+email+"' AND driverrs.password = '"+password+"';";
+            ResultSet rs = statement.executeQuery(sql);
+            return rs.next();
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            
+            System.out.print(e.getMessage());
+            return false;
+        }
+    }
+    
+    public boolean authCustomerA(String email, String password) {
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+
+            String sql = "SELECT * FROM admin WHERE admin.email = '"+email+"' AND admin.password = '"+password+"';";
             ResultSet rs = statement.executeQuery(sql);
             return rs.next();
             

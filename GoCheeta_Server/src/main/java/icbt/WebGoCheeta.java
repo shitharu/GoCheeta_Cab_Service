@@ -128,6 +128,18 @@ public class WebGoCheeta {
         return gocheeta.authCustomer(email, password);
     }
     
+    @WebMethod(operationName = "authCustomerD")
+    public boolean authCustomerD(@WebParam(name = "email") String email, @WebParam(name = "password") String password) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.authCustomerD(email, password);
+    }
+    
+    @WebMethod(operationName = "authCustomerA")
+    public boolean authCustomerA(@WebParam(name = "email") String email, @WebParam(name = "password") String password) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.authCustomerA(email, password);
+    }
+    
     @WebMethod(operationName = "addContactUs")
     public boolean addContactUs(@WebParam(name = "cnt")Contact cnt){
         DBGoCheeta gocheeta = new DBGoCheeta();
