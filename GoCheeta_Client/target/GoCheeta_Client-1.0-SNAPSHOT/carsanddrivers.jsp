@@ -23,6 +23,8 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
         
+        <link rel="stylesheet" href="service.css"/>
+        
         <style>
             
 .about-section {
@@ -30,6 +32,23 @@ padding: 50px;
 text-align: center;
 background-color: #4d001f;
 color: white;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    }    
+
+p{
+    font-size: 18px;
+    color: #0088cc;
+}
+
+td
+{
+  width: 210px;
 }
 
 * {
@@ -115,6 +134,8 @@ background-color: #FF007F;
     </head>
     <body style="background-color:#99c2ff;">
         <nav>
+            
+            <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
 
             <div class="heading">
 
@@ -212,12 +233,37 @@ background-color: #FF007F;
                 </script>
                 
         <div class="about-section">
-          <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
-
-          <p>aaaaaaaaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaaaaaaaa</p>
-
-          <h1>bbbbbbbbbbbbbbbbbbbbbb</h1>
+      
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <a href="index.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Home<br>
+                <a href="booking.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Booking<br>
+                <a href="about.html"><i class="fa-regular fa-hand" ></i></a> &nbsp About<br>
+                <a href="services.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Services<br>
+                <a href="contact.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Contact Us<br>
+            </td>
+            <td>
+                <a href="login.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Login<br>
+                <a href="signup.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Sign Up<br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
+        </table>
         </div>
+    </div>
+
     </body>
 </html>

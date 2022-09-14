@@ -12,6 +12,7 @@
     dvr.setName(request.getParameter("name"));
     dvr.setTelno(Integer.parseInt(request.getParameter("telno")));
     dvr.setBranch(request.getParameter("branch"));
+    dvr.setVehicle(request.getParameter("vehicle"));
     proxy.addDriverr(dvr);
     response.sendRedirect("index.jsp");
     

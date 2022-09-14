@@ -27,6 +27,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
 
+    <link rel="stylesheet" href="service.css"/>
     
     <style>
         
@@ -35,6 +36,23 @@
   text-align: center;
   background-color: #1A5276;
   color: white;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    }    
+
+p{
+    font-size: 18px;
+    color: #0088cc;
+}
+
+td
+{
+  width: 210px;
 }
        
 input[type=text], select, textarea {
@@ -82,6 +100,7 @@ input[type=submit]:hover {
         %>
 
     <nav>
+        <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
 
       <div class="heading">
 
@@ -105,12 +124,16 @@ input[type=submit]:hover {
       </ul>
 
     </nav>
-      <br><br>
-      <h1 align="center">Contact Us</h1>
-      <h2 align="center">If you want some details from us .. Here we are;</h2>
-      <h2 align="center">Ask now ..</h2>
-      <br><br>
-
+        
+    <div class="about-section">
+      <h1>_ CONTACT US _</h1>
+      
+      <p>If you want some details from us .. Here we are;</p>
+      <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
+      
+      <h1>Contact Now !!</h1>
+    </div>
+        
     <div class="container">
       <form action="processcontact.jsp" method="post">
 
@@ -132,12 +155,36 @@ input[type=submit]:hover {
     </div>
       
     <div class="about-section">
-      <h1>bbbbbbbbbbbbbbbbbbbbbbbb</h1>
       
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      <p>aaaaaaaaaaaaaaaaaaaaa</p>
-      
-      <h1>bbbbbbbbbbbbbbbbbbbbbb</h1>
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <a href="index.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Home<br>
+                <a href="booking.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Booking<br>
+                <a href="about.html"><i class="fa-regular fa-hand" ></i></a> &nbsp About<br>
+                <a href="services.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Services<br>
+                <a href="contact.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Contact Us<br>
+            </td>
+            <td>
+                <a href="login.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Login<br>
+                <a href="signup.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Sign Up<br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
+        </table>
+        </div>
     </div>
  
 

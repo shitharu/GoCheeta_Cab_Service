@@ -12,7 +12,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>User Registration</title>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
+    
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #1A5276;
+  color: white;
+}
+
+p{
+    font-family: Arial;
+    font-size: 18px;
+    color: #9FE2BF;
+}
+
+.btn-success{
+    width: 100%;
+}
+
+.btn-danger{
+    width: 100%;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+} 
+
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
@@ -33,41 +65,18 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+
 
 
 .h2{
    text-align: center;
 } 
 
-button:hover {
-  opacity:1;
-}
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
 
 /* Add padding to container elements */
 .container {
-  padding: 16px;
+  padding: 20px;
 }
 
 /* The Modal (background) */
@@ -77,8 +86,8 @@ button:hover {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 80%; /* Full width */
+  height: 80%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: #474e5d;
   padding-top: 50px;
@@ -89,7 +98,7 @@ button:hover {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 90%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */
@@ -97,36 +106,7 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
 
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
 </style>
 </head>
 <body>
@@ -135,57 +115,76 @@ hr {
             WebGoCheeta proxy = service.getWebGoCheetaPort();   
                        
     %>
+    
+    <div class="about-section">
+      
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <h1>_ USER REGISTRATION FORM _</h1>
+      
+                <p>We Are GoCheeta Cab Service</p>
+                <p>We Provide You With a Very Comfortable Travel Experience. Best Cab Service in Sri Lanka.</p>
 
-<h2>User Registration Form</h2>
+                <h1>JOIN US !!</h1>
+            </td>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    
 
 <div>
   
   <form class="modal-content" action="processuserregistrastion.jsp" method="post">
     <div class="container">
       <h1>Register Here,</h1>
-      <p>Please fill in this form to create a new account.</p>
+      <h4>Please fill in this form to create a new user account.</h4>
       <hr>
       
-      <label for="fname"><b>First Name</b></label>
+      <b>First Name</b>
       <input type="text" placeholder="First Name" name="firstname" required>
 
-      <label for="lname"><b>Last Name</b></label>
+      <b>Last Name</b>
       <input type="text" placeholder="Last Name" name="lastname" required>
       
-      <label for="lnic"><b>NIC</b></label>
+      <b>NIC</b>
       <input type="text" placeholder="NIC" name="nic" required>
       
-       <label for="laddr"><b>Enter address</b></label>
+      <b>Enter address</b>
       <input type="text" placeholder="Enter Address" name="address" required>
       
-      <label for="lemail"><b>Enter Email</b></label>
+      <b>Enter Email</b>
       <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="lmobno"><b>Mobile No</b></label>
+      <b>Mobile No</b>
       <input type="text" placeholder="mobile no" name="mobile" required>
       
-      <label for="lid"><b>ID</b></label>
+      <b>ID</b>
       <input type="text" placeholder="id" name="id" required>
       
-      <label for="lusername"><b>Username</b></label>
+      <b>Username</b>
       <input type="text" placeholder="Enter username" name="username" required>
       
-      <label for="lpassword"><b>Enter password</b></label>
+      <b>Enter password</b>
       <input type="Password" placeholder="Enter password" name="password" required>
 
     
       
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn" value="Add">Sign Up</button>
-      </div>
-
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
+      </label><br>
       
+        <input type=submit value='SUBMIT' class="btn btn-success">
+        
+        <input type=button value='CLOSE' class="btn btn-danger">
+        
+        
+      <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
+
     </div>
   </form>
 </div>
