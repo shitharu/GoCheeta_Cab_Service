@@ -13,7 +13,10 @@ public class Driverr {
     private String name;
     private int telno;
     private String branch;
+    private String email;
     private String vehicle;
+    private String username;
+    private String password;
     
     public Driverr(){
         this.id =0;
@@ -21,14 +24,20 @@ public class Driverr {
         this.telno =0;
         this.branch ="";
         this.vehicle ="";
+        this.email ="";
+        this.username ="";
+        this.password ="";
     }
     
-    public Driverr(int id, String name, int telno, String branch, String vehicle){
+    public Driverr(int id, String name, int telno, String branch,String email, String vehicle, String username,String password){
         this.id =id;
         this.name =name;
         this.telno =telno;
         this.branch =branch;
+        this.email =email;
         this.vehicle= vehicle;
+        this.username=username;
+        this.password=password;
     }
     
     public int getId(){
@@ -62,6 +71,14 @@ public class Driverr {
     public void setBranch(String branch){
         this.branch = branch;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
    
     public String getVehicle(){
         return vehicle;
@@ -69,5 +86,21 @@ public class Driverr {
     
     public void setVehicle(String vehicle){
         this.vehicle = vehicle;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

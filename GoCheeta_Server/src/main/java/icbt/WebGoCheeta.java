@@ -151,4 +151,10 @@ public class WebGoCheeta {
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.getMessages();
     }
+    
+    @WebMethod(operationName = "getLocation")
+    public Car getLocation(@WebParam(name = "carid")int carid){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getLocation(carid);
+    }
 }

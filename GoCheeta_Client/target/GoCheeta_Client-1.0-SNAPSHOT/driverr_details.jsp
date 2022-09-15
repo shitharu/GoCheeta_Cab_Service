@@ -57,16 +57,6 @@
         
         <h3>Add Drivers</h3>
 
-        <div id='edit-section'>
-                <form action="process_driverr.jsp" method="post">
-                   ID : <input type="text" name="id"/>
-                   Name : <input type="text" name="name"/>
-                   Tel_No : <input type="text" name="telno"/>
-                   Branch : <input type="text" name="branch"/>
-                <input type="submit" value="Add">
-            </form>
-        </div>
-        <hr>
         
         <h3>Search, Update and Delete Drivers</h3>
         <div id='control-section'>

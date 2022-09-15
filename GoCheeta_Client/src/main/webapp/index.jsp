@@ -97,26 +97,6 @@ input[type=text]:focus, input[type=password]:focus {
   padding: 20px;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 90%; /* Could be more or less, depending on screen size */
-}
-
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
@@ -125,11 +105,6 @@ hr {
 </style>
     </head>
     <body>
-        <%             
-            WebGoCheeta_Service service = new WebGoCheeta_Service();
-            WebGoCheeta proxy = service.getWebGoCheetaPort();   
-                       
-        %>
         
         <div class="about-section">
       
@@ -148,58 +123,50 @@ hr {
             </table>
             </div>
         </div>
-        <hr>
-        
         
         
         <div>
-
-          <form class="modal-content" action="process_driverr.jsp" method="post">
-            <div class="container">
+        <div class="container">
+          <form action="process_driverr.jsp" method="post">
+            
               <h1>Register Here,</h1>
               <h4>Please fill in this form to create a new user account.</h4>
               <hr>
 
               <b>ID</b>
-              <input type="text" placeholder="id" name="id" required>
+              <input type="text" id="id" placeholder="id" name="id" required>
 
               <b>Name</b>
-              <input type="text" placeholder="Your Name" name="name" required>
+              <input type="text" id="name" placeholder="Your Name" name="name" required>
 
               <b>Telephone Number</b>
-              <input type="text" placeholder="Your Telephone Number" name="telno" required>
+              <input type="text" id="telno" placeholder="Your Telephone Number" name="telno" required>
 
               <b>Branch</b>
-              <input type="text" placeholder="Enter Branch" name="branch" required>
-
-              <b>Enter Email</b>
-              <input type="text" placeholder="Enter Email" name="email" required>
-
-              <b>Mobile No</b>
-              <input type="text" placeholder="mobile no" name="mobile" required>
-
+              <input type="text" id="branch" placeholder="Enter Branch" name="branch" required>
+              
               <label><b>Choose a Vehicle</b></label>
                 <select name="vehicle" id="vehicle">
                   <option value="Car">Car</option>
                   <option value="Van">Van</option>
                 </select><br><br><br>
 
-              <b>Username</b>
-              <input type="text" placeholder="Enter username" name="username" required>
+              <b>Enter Email</b>
+              <input type="text" id="email" placeholder="Enter Email" name="email" required>
 
               <b>Enter password</b>
-              <input type="Password" placeholder="Enter password" name="password" required>
-
+              <input type="Password" id="password" placeholder="Enter password" name="password"  required>             
 
                 <input type=submit value='SUBMIT' class="btn btn-success">
 
-                <input type=button value='CLOSE' class="btn btn-danger">
-
-
-              <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
-
+            </form>
+            <a href="index.html">
+                <button class="btn btn-danger">CLOSE</button>
+            </a>
+            <br><br>
+            <h5 align="right">By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
             </div>
-          </form>
+            
         </div>
     </body>
 </html>

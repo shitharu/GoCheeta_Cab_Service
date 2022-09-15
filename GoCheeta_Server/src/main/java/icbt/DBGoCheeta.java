@@ -89,7 +89,7 @@ public class DBGoCheeta {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
             Statement statement = conn.createStatement();
             
-            rowAffected = statement.executeUpdate("INSERT INTO `driverrs` VALUES (" + dvr.getId() + ",'" + dvr.getName() + "'," + dvr.getTelno() + ",'" + dvr.getBranch() + "','" + dvr.getVehicle()+ "')");
+            rowAffected = statement.executeUpdate("INSERT INTO `driverrs` VALUES (" + dvr.getId() + ",'" + dvr.getName() + "'," + dvr.getTelno() + ",'" + dvr.getBranch() + "','" + dvr.getVehicle()+ "','" + dvr.getPassword() + "','" + dvr.getEmail() + "')");
            
         }catch(ClassNotFoundException | SQLException e){
             
@@ -148,6 +148,7 @@ public class DBGoCheeta {
             
             rowAffected = statement.executeUpdate("INSERT INTO `users` VALUES ('" + user.getFirstname() + "','" + user.getLastname() + "','" + user.getNic() + "','" + user.getAddress() + "','" + user.getEmail() + "'," + user.getMobile() + "," + user.getId() + ",'" + user.getUsername() + "','" + user.getPassword() + "')");
            
+            
         }catch(ClassNotFoundException | SQLException e){
             
             System.out.println(e.getMessage());
@@ -519,6 +520,34 @@ public class DBGoCheeta {
             
         }
         return messages;
+    }
+    
+    public Car getLocation(int carid){
+        Car car = new Car();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM car WHERE carid=" + carid);
+    
+            resultSet.next();
+                car.setCarid(resultSet.getInt("carid"));
+                car.setStartcity(resultSet.getString("startcity"));
+                car.setEndcity(resultSet.getString("endcity"));
+                car.setDestination(resultSet.getString("destination"));
+                car.setPrice(resultSet.getInt("price"));
+                
+            
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return car;
+      
     }
 }
 

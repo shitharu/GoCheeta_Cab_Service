@@ -6,6 +6,8 @@
 
 
 
+<%@page import="icbt.Car"%>
+<%@page import="lk.icbt.ng.web.client.UICar"%>
 <%@page import="icbt.WebGoCheeta"%>
 <%@page import="icbt.WebGoCheeta_Service"%>
 
@@ -21,6 +23,8 @@
     <title>User Registration</title>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     
 .about-section {
@@ -107,6 +111,10 @@ input[type=text]:focus, input[type=password]:focus {
   width: 90%; /* Could be more or less, depending on screen size */
 }
 
+.checked {
+  color: orange;
+}
+
 /* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
@@ -143,44 +151,74 @@ hr {
     </div>
     
 
-<div>
-  
-  <form class="modal-content" action="processuserregistrastion.jsp" method="post">
     <div class="container">
-        <h1>Fill this for Booking a Car</h1>
+        <form action="bookcar.jsp" method="post">
+  
+        <h1>All Car Travels</h1>
+            <table id='table' class='table table-striped table-bordered' style='width:100%'> 
+            <thead>
+                <tr>
+                    <th>Car ID</th>
+                    <th>Start City</th>
+                    <th>End City</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%       
+                    if (request.getParameter("id") == null) {
+                        for(Car car :  proxy.getCars()) {
+                            UICar.printCarRows(car, out);
+                         }
+                    } else {
+                        UICar.printCarRows(proxy.getLocation(Integer.parseInt(request.getParameter("id"))), out);
+                    }
+                %>
+            </tbody>
+        </table>
+        
+                <script>
+                    
+                     $(document).ready(function () {
+                        $('#cars').DataTable();
+                     });
+                                             
+                </script>
+        
+        
+        <h1>Find Your Path in here:</h1>
         <hr>
 
-        <b>ID</b>
+        <b>Enter Car ID</b>
         <input type="text" placeholder="id" name="id" required>
-
-        <b>Name</b>
-        <input type="text" placeholder="Name" name="name" required>
-
-        <b>Mobile No</b>
-        <input type="text" placeholder="mobile no" name="mobile" required>
-      
-        <label><b>Start Location</b></label>
-                <select name="startlocation" id="startlocation">
-                    <option value="Kandy">Kandy</option>
-                    <option value="Gampaha">Gampaha</option>
-                </select><br><br><br>
-                
-        <label><b>End Location</b></label>
-                <select name="endlocation" id="endlocation">
-                    <option value="Kandy">Kandy</option>
-                    <option value="Gampaha">Gampaha</option>
-                </select><br><br><br>
+        
+        <!-- comment id <input type="text" name="id" id="id"><br><br>
+        start city <input type="text" name="startcity" id="startcity"><br><br>
+        end city <input type="text" name="endcity" id="endcity"><br><br>
+        destination <input type="text" name="destination" id="destination"><br><br>
+        price <input type="text" name="price" id="price"><br><br >-->
     
-        <input type=submit value='SUBMIT' class="btn btn-success">
+        <input type="submit" value="SEARCH" class="btn btn-success"> <br><br>
         
-        <input type=button value='CLOSE' class="btn btn-danger">
-        
-        
-      <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
+        <h3>Your Payment Will Be Processed According to the Price List mentioned Above. In Addition to that;</h3><br>
+              
+       <h4><span class="fa fa-star checked">&nbsp; Waiting fee is Rs. 200 per hour.</span></h4>
+        <h4><span class="fa fa-star checked">&nbsp; Discount are given for special people and dates.</span></h4>
+        <h4><span class="fa fa-star">&nbsp; Provide a comfortable destination.</span></h4>
+        <h4><span class="fa fa-star">&nbsp; Don't be rude.</span></h4>
+        <h4><span class="fa fa-star">&nbsp; Always be friendly with your driver.</span></h4>
 
-    </div>
-  </form>
-</div>
+      <hr>
+      <h3 align="right">Thank You ..</h3>
+      <hr>
+      
+      <h5 align="right">By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
+      <hr>
+      
+      
+      </form>
+  </div>
 
 
 

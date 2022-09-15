@@ -29,6 +29,7 @@ E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\Object
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetUser.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetVans.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\WebGoCheeta.java
+E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetLocation.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\Hello.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\Driverr.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetMessages.java
@@ -54,6 +55,7 @@ E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\AuthCu
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\DeleteStudents.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetCar.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\AddUserResponse.java
+E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetLocationResponse.java
 E:\Downloads\GoCheeta_Client\src\main\java\lk\icbt\ng\web\client\UIGoCheeta.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\Contact.java
 E:\Downloads\GoCheeta_Client\target\generated-sources\jaxws-wsimport\icbt\GetCarResponse.java

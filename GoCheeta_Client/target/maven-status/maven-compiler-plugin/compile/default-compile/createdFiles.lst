@@ -1,4 +1,6 @@
 icbt\AuthCustomerA.class
 icbt\AuthCustomerD.class
 icbt\AuthCustomerAResponse.class
+icbt\GetLocation.class
+icbt\GetLocationResponse.class
 icbt\AuthCustomerDResponse.class

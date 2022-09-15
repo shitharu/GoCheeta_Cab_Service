@@ -1,9 +1,11 @@
 <%-- 
-    Document   : index
+    Document   : editdelete
     Created on : Aug 7, 2022, 9:41:14 PM
     Author     : Tharushi Dhananjika
 --%>
 
+<%@page import="icbt.Car"%>
+<%@page import="lk.icbt.ng.web.client.UICar"%>
 <%@page import="icbt.WebGoCheeta"%>
 <%@page import="icbt.WebGoCheeta_Service"%>
 <%@page import="lk.icbt.ng.web.client.UIGoCheeta"%>
@@ -148,64 +150,10 @@ hr {
             </div>
         </div>
         <hr>
-        
-        
-        
-        <div>
-  
-  <form class="modal-content" action="process_driverr.jsp" method="post">
-    <div class="container">
-      <h1>Register Here,</h1>
-      <h4>Please fill in this form to create a new user account.</h4>
-      <hr>
       
-      <b>ID</b>
-      <input type="text" placeholder="id" name="id" required>
-
-      <b>Name</b>
-      <input type="text" placeholder="Your Name" name="name" required>
-      
-      <b>Telephone Number</b>
-      <input type="text" placeholder="Your Telephone Number" name="telno" required>
-      
-      <b>Branch</b>
-      <input type="text" placeholder="Enter Branch" name="branch" required>
-      
-      <b>Enter Email</b>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <b>Mobile No</b>
-      <input type="text" placeholder="mobile no" name="mobile" required>
-      
-      <label><b>Choose a Vehicle</b></label>
-        <select name="vehicle" id="vehicle">
-          <option value="Car">Car</option>
-          <option value="Van">Van</option>
-        </select><br><br><br>
-      
-      <b>Username</b>
-      <input type="text" placeholder="Enter username" name="username" required>
-      
-      <b>Enter password</b>
-      <input type="Password" placeholder="Enter password" name="password" required>
-
-      
-        <input type=submit value='SUBMIT' class="btn btn-success">
-        
-        <input type=button value='CLOSE' class="btn btn-danger">
-        
-        
-      <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
-
-    </div>
-  </form>
-</div>
-
-        
-        
         <h3>Search, Update and Delete Drivers</h3>
         <div id='control-section'>
-            <form action="index.jsp" method="post">
+            <form action="editdelete.jsp" method="post">
                 Driver ID : <input type="text" name="id"/>
                             
                 <input type="submit" value="LOAD"> <br><br>
@@ -226,21 +174,22 @@ hr {
             <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
             <thead>
                 <tr>
-                    <th>Driver ID</th>
-                    <th>Driver Name</th>
-                    <th>Contact Number</th>
-                    <th>Branch</th>
+                    <th>Car ID</th>
+                    <th>Start City</th>
+                    <th>End City</th>
+                    <th>Destination</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
                 <%       
-                    if (request.getParameter("id") == null) {
-                        for(Driverr dvr :  proxy.getDriverrs()) {
-                            UIGoCheeta.printDriverrRows(dvr, out);
-                         }
-                    } else {
-                        UIGoCheeta.printDriverrRows(proxy.getDriverr(Integer.parseInt(request.getParameter("id"))), out);
-                    }
+                        if (request.getParameter("id") == null) {
+                            for(Car car :  proxy.getCars()) {
+                                UICar.printCarRows(car, out);
+                             }
+                        } else {
+                            UICar.printCarRows(proxy.getLocation(Integer.parseInt(request.getParameter("id"))), out);
+                        }
                 %>
             </tbody>
         </table>

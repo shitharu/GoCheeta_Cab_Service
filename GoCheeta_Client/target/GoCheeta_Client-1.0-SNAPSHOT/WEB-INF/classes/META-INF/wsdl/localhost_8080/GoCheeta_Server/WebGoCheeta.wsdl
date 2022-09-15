@@ -4,17 +4,23 @@
 <xsd:import namespace="http://icbt/" schemaLocation="http://localhost:8080/GoCheeta_Server/WebGoCheeta?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getMessages">
-<part name="parameters" element="tns:getMessages"/>
+<message name="getLocation">
+<part name="parameters" element="tns:getLocation"/>
 </message>
-<message name="getMessagesResponse">
-<part name="parameters" element="tns:getMessagesResponse"/>
+<message name="getLocationResponse">
+<part name="parameters" element="tns:getLocationResponse"/>
 </message>
 <message name="addUser">
 <part name="parameters" element="tns:addUser"/>
 </message>
 <message name="addUserResponse">
 <part name="parameters" element="tns:addUserResponse"/>
+</message>
+<message name="authCustomerD">
+<part name="parameters" element="tns:authCustomerD"/>
+</message>
+<message name="authCustomerDResponse">
+<part name="parameters" element="tns:authCustomerDResponse"/>
 </message>
 <message name="getVan">
 <part name="parameters" element="tns:getVan"/>
@@ -28,11 +34,11 @@
 <message name="getCarResponse">
 <part name="parameters" element="tns:getCarResponse"/>
 </message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"/>
+<message name="authCustomerA">
+<part name="parameters" element="tns:authCustomerA"/>
 </message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"/>
+<message name="authCustomerAResponse">
+<part name="parameters" element="tns:authCustomerAResponse"/>
 </message>
 <message name="addContactUs">
 <part name="parameters" element="tns:addContactUs"/>
@@ -46,23 +52,11 @@
 <message name="authCustomerResponse">
 <part name="parameters" element="tns:authCustomerResponse"/>
 </message>
-<message name="getCarsOnly">
-<part name="parameters" element="tns:getCarsOnly"/>
+<message name="addCar">
+<part name="parameters" element="tns:addCar"/>
 </message>
-<message name="getCarsOnlyResponse">
-<part name="parameters" element="tns:getCarsOnlyResponse"/>
-</message>
-<message name="getCars">
-<part name="parameters" element="tns:getCars"/>
-</message>
-<message name="getCarsResponse">
-<part name="parameters" element="tns:getCarsResponse"/>
-</message>
-<message name="getVans">
-<part name="parameters" element="tns:getVans"/>
-</message>
-<message name="getVansResponse">
-<part name="parameters" element="tns:getVansResponse"/>
+<message name="addCarResponse">
+<part name="parameters" element="tns:addCarResponse"/>
 </message>
 <message name="getVansOnly">
 <part name="parameters" element="tns:getVansOnly"/>
@@ -70,59 +64,29 @@
 <message name="getVansOnlyResponse">
 <part name="parameters" element="tns:getVansOnlyResponse"/>
 </message>
-<message name="authCustomerD">
-<part name="parameters" element="tns:authCustomerD"/>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"/>
 </message>
-<message name="authCustomerDResponse">
-<part name="parameters" element="tns:authCustomerDResponse"/>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"/>
 </message>
-<message name="addCar">
-<part name="parameters" element="tns:addCar"/>
+<message name="getCarsOnly">
+<part name="parameters" element="tns:getCarsOnly"/>
 </message>
-<message name="addCarResponse">
-<part name="parameters" element="tns:addCarResponse"/>
+<message name="getCarsOnlyResponse">
+<part name="parameters" element="tns:getCarsOnlyResponse"/>
 </message>
-<message name="getUser">
-<part name="parameters" element="tns:getUser"/>
+<message name="getVans">
+<part name="parameters" element="tns:getVans"/>
 </message>
-<message name="getUserResponse">
-<part name="parameters" element="tns:getUserResponse"/>
+<message name="getVansResponse">
+<part name="parameters" element="tns:getVansResponse"/>
 </message>
-<message name="authCustomerA">
-<part name="parameters" element="tns:authCustomerA"/>
+<message name="getCars">
+<part name="parameters" element="tns:getCars"/>
 </message>
-<message name="authCustomerAResponse">
-<part name="parameters" element="tns:authCustomerAResponse"/>
-</message>
-<message name="deleteDriverrs">
-<part name="parameters" element="tns:deleteDriverrs"/>
-</message>
-<message name="deleteDriverrsResponse">
-<part name="parameters" element="tns:deleteDriverrsResponse"/>
-</message>
-<message name="getDriverrs">
-<part name="parameters" element="tns:getDriverrs"/>
-</message>
-<message name="getDriverrsResponse">
-<part name="parameters" element="tns:getDriverrsResponse"/>
-</message>
-<message name="addDriverr">
-<part name="parameters" element="tns:addDriverr"/>
-</message>
-<message name="addDriverrResponse">
-<part name="parameters" element="tns:addDriverrResponse"/>
-</message>
-<message name="getDriverr">
-<part name="parameters" element="tns:getDriverr"/>
-</message>
-<message name="getDriverrResponse">
-<part name="parameters" element="tns:getDriverrResponse"/>
-</message>
-<message name="updateDriverrs">
-<part name="parameters" element="tns:updateDriverrs"/>
-</message>
-<message name="updateDriverrsResponse">
-<part name="parameters" element="tns:updateDriverrsResponse"/>
+<message name="getCarsResponse">
+<part name="parameters" element="tns:getCarsResponse"/>
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
@@ -130,14 +94,60 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
+<message name="addDriverr">
+<part name="parameters" element="tns:addDriverr"/>
+</message>
+<message name="addDriverrResponse">
+<part name="parameters" element="tns:addDriverrResponse"/>
+</message>
+<message name="getDriverrs">
+<part name="parameters" element="tns:getDriverrs"/>
+</message>
+<message name="getDriverrsResponse">
+<part name="parameters" element="tns:getDriverrsResponse"/>
+</message>
+<message name="updateDriverrs">
+<part name="parameters" element="tns:updateDriverrs"/>
+</message>
+<message name="updateDriverrsResponse">
+<part name="parameters" element="tns:updateDriverrsResponse"/>
+</message>
+<message name="getDriverr">
+<part name="parameters" element="tns:getDriverr"/>
+</message>
+<message name="getDriverrResponse">
+<part name="parameters" element="tns:getDriverrResponse"/>
+</message>
+<message name="deleteDriverrs">
+<part name="parameters" element="tns:deleteDriverrs"/>
+</message>
+<message name="deleteDriverrsResponse">
+<part name="parameters" element="tns:deleteDriverrsResponse"/>
+</message>
+<message name="getUser">
+<part name="parameters" element="tns:getUser"/>
+</message>
+<message name="getUserResponse">
+<part name="parameters" element="tns:getUserResponse"/>
+</message>
+<message name="getMessages">
+<part name="parameters" element="tns:getMessages"/>
+</message>
+<message name="getMessagesResponse">
+<part name="parameters" element="tns:getMessagesResponse"/>
+</message>
 <portType name="WebGoCheeta">
-<operation name="getMessages">
-<input wsam:Action="http://icbt/WebGoCheeta/getMessagesRequest" message="tns:getMessages"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getMessagesResponse" message="tns:getMessagesResponse"/>
+<operation name="getLocation">
+<input wsam:Action="http://icbt/WebGoCheeta/getLocationRequest" message="tns:getLocation"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getLocationResponse" message="tns:getLocationResponse"/>
 </operation>
 <operation name="addUser">
 <input wsam:Action="http://icbt/WebGoCheeta/addUserRequest" message="tns:addUser"/>
 <output wsam:Action="http://icbt/WebGoCheeta/addUserResponse" message="tns:addUserResponse"/>
+</operation>
+<operation name="authCustomerD">
+<input wsam:Action="http://icbt/WebGoCheeta/authCustomerDRequest" message="tns:authCustomerD"/>
+<output wsam:Action="http://icbt/WebGoCheeta/authCustomerDResponse" message="tns:authCustomerDResponse"/>
 </operation>
 <operation name="getVan">
 <input wsam:Action="http://icbt/WebGoCheeta/getVanRequest" message="tns:getVan"/>
@@ -147,9 +157,9 @@
 <input wsam:Action="http://icbt/WebGoCheeta/getCarRequest" message="tns:getCar"/>
 <output wsam:Action="http://icbt/WebGoCheeta/getCarResponse" message="tns:getCarResponse"/>
 </operation>
-<operation name="getUsers">
-<input wsam:Action="http://icbt/WebGoCheeta/getUsersRequest" message="tns:getUsers"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getUsersResponse" message="tns:getUsersResponse"/>
+<operation name="authCustomerA">
+<input wsam:Action="http://icbt/WebGoCheeta/authCustomerARequest" message="tns:authCustomerA"/>
+<output wsam:Action="http://icbt/WebGoCheeta/authCustomerAResponse" message="tns:authCustomerAResponse"/>
 </operation>
 <operation name="addContactUs">
 <input wsam:Action="http://icbt/WebGoCheeta/addContactUsRequest" message="tns:addContactUs"/>
@@ -159,66 +169,66 @@
 <input wsam:Action="http://icbt/WebGoCheeta/authCustomerRequest" message="tns:authCustomer"/>
 <output wsam:Action="http://icbt/WebGoCheeta/authCustomerResponse" message="tns:authCustomerResponse"/>
 </operation>
-<operation name="getCarsOnly">
-<input wsam:Action="http://icbt/WebGoCheeta/getCarsOnlyRequest" message="tns:getCarsOnly"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getCarsOnlyResponse" message="tns:getCarsOnlyResponse"/>
-</operation>
-<operation name="getCars">
-<input wsam:Action="http://icbt/WebGoCheeta/getCarsRequest" message="tns:getCars"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getCarsResponse" message="tns:getCarsResponse"/>
-</operation>
-<operation name="getVans">
-<input wsam:Action="http://icbt/WebGoCheeta/getVansRequest" message="tns:getVans"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getVansResponse" message="tns:getVansResponse"/>
+<operation name="addCar">
+<input wsam:Action="http://icbt/WebGoCheeta/addCarRequest" message="tns:addCar"/>
+<output wsam:Action="http://icbt/WebGoCheeta/addCarResponse" message="tns:addCarResponse"/>
 </operation>
 <operation name="getVansOnly">
 <input wsam:Action="http://icbt/WebGoCheeta/getVansOnlyRequest" message="tns:getVansOnly"/>
 <output wsam:Action="http://icbt/WebGoCheeta/getVansOnlyResponse" message="tns:getVansOnlyResponse"/>
 </operation>
-<operation name="authCustomerD">
-<input wsam:Action="http://icbt/WebGoCheeta/authCustomerDRequest" message="tns:authCustomerD"/>
-<output wsam:Action="http://icbt/WebGoCheeta/authCustomerDResponse" message="tns:authCustomerDResponse"/>
+<operation name="getUsers">
+<input wsam:Action="http://icbt/WebGoCheeta/getUsersRequest" message="tns:getUsers"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getUsersResponse" message="tns:getUsersResponse"/>
 </operation>
-<operation name="addCar">
-<input wsam:Action="http://icbt/WebGoCheeta/addCarRequest" message="tns:addCar"/>
-<output wsam:Action="http://icbt/WebGoCheeta/addCarResponse" message="tns:addCarResponse"/>
+<operation name="getCarsOnly">
+<input wsam:Action="http://icbt/WebGoCheeta/getCarsOnlyRequest" message="tns:getCarsOnly"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getCarsOnlyResponse" message="tns:getCarsOnlyResponse"/>
 </operation>
-<operation name="getUser">
-<input wsam:Action="http://icbt/WebGoCheeta/getUserRequest" message="tns:getUser"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getUserResponse" message="tns:getUserResponse"/>
+<operation name="getVans">
+<input wsam:Action="http://icbt/WebGoCheeta/getVansRequest" message="tns:getVans"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getVansResponse" message="tns:getVansResponse"/>
 </operation>
-<operation name="authCustomerA">
-<input wsam:Action="http://icbt/WebGoCheeta/authCustomerARequest" message="tns:authCustomerA"/>
-<output wsam:Action="http://icbt/WebGoCheeta/authCustomerAResponse" message="tns:authCustomerAResponse"/>
-</operation>
-<operation name="deleteDriverrs">
-<input wsam:Action="http://icbt/WebGoCheeta/deleteDriverrsRequest" message="tns:deleteDriverrs"/>
-<output wsam:Action="http://icbt/WebGoCheeta/deleteDriverrsResponse" message="tns:deleteDriverrsResponse"/>
-</operation>
-<operation name="getDriverrs">
-<input wsam:Action="http://icbt/WebGoCheeta/getDriverrsRequest" message="tns:getDriverrs"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getDriverrsResponse" message="tns:getDriverrsResponse"/>
-</operation>
-<operation name="addDriverr">
-<input wsam:Action="http://icbt/WebGoCheeta/addDriverrRequest" message="tns:addDriverr"/>
-<output wsam:Action="http://icbt/WebGoCheeta/addDriverrResponse" message="tns:addDriverrResponse"/>
-</operation>
-<operation name="getDriverr">
-<input wsam:Action="http://icbt/WebGoCheeta/getDriverrRequest" message="tns:getDriverr"/>
-<output wsam:Action="http://icbt/WebGoCheeta/getDriverrResponse" message="tns:getDriverrResponse"/>
-</operation>
-<operation name="updateDriverrs">
-<input wsam:Action="http://icbt/WebGoCheeta/updateDriverrsRequest" message="tns:updateDriverrs"/>
-<output wsam:Action="http://icbt/WebGoCheeta/updateDriverrsResponse" message="tns:updateDriverrsResponse"/>
+<operation name="getCars">
+<input wsam:Action="http://icbt/WebGoCheeta/getCarsRequest" message="tns:getCars"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getCarsResponse" message="tns:getCarsResponse"/>
 </operation>
 <operation name="hello">
 <input wsam:Action="http://icbt/WebGoCheeta/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://icbt/WebGoCheeta/helloResponse" message="tns:helloResponse"/>
 </operation>
+<operation name="addDriverr">
+<input wsam:Action="http://icbt/WebGoCheeta/addDriverrRequest" message="tns:addDriverr"/>
+<output wsam:Action="http://icbt/WebGoCheeta/addDriverrResponse" message="tns:addDriverrResponse"/>
+</operation>
+<operation name="getDriverrs">
+<input wsam:Action="http://icbt/WebGoCheeta/getDriverrsRequest" message="tns:getDriverrs"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getDriverrsResponse" message="tns:getDriverrsResponse"/>
+</operation>
+<operation name="updateDriverrs">
+<input wsam:Action="http://icbt/WebGoCheeta/updateDriverrsRequest" message="tns:updateDriverrs"/>
+<output wsam:Action="http://icbt/WebGoCheeta/updateDriverrsResponse" message="tns:updateDriverrsResponse"/>
+</operation>
+<operation name="getDriverr">
+<input wsam:Action="http://icbt/WebGoCheeta/getDriverrRequest" message="tns:getDriverr"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getDriverrResponse" message="tns:getDriverrResponse"/>
+</operation>
+<operation name="deleteDriverrs">
+<input wsam:Action="http://icbt/WebGoCheeta/deleteDriverrsRequest" message="tns:deleteDriverrs"/>
+<output wsam:Action="http://icbt/WebGoCheeta/deleteDriverrsResponse" message="tns:deleteDriverrsResponse"/>
+</operation>
+<operation name="getUser">
+<input wsam:Action="http://icbt/WebGoCheeta/getUserRequest" message="tns:getUser"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getUserResponse" message="tns:getUserResponse"/>
+</operation>
+<operation name="getMessages">
+<input wsam:Action="http://icbt/WebGoCheeta/getMessagesRequest" message="tns:getMessages"/>
+<output wsam:Action="http://icbt/WebGoCheeta/getMessagesResponse" message="tns:getMessagesResponse"/>
+</operation>
 </portType>
 <binding name="WebGoCheetaPortBinding" type="tns:WebGoCheeta">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getMessages">
+<operation name="getLocation">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -228,6 +238,15 @@
 </output>
 </operation>
 <operation name="addUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="authCustomerD">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -254,7 +273,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getUsers">
+<operation name="authCustomerA">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -281,25 +300,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getCarsOnly">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getCars">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getVans">
+<operation name="addCar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -317,7 +318,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="authCustomerD">
+<operation name="getUsers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -326,7 +327,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addCar">
+<operation name="getCarsOnly">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -335,7 +336,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getUser">
+<operation name="getVans">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -344,7 +345,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="authCustomerA">
+<operation name="getCars">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -353,16 +354,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="deleteDriverrs">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getDriverrs">
+<operation name="hello">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -380,7 +372,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getDriverr">
+<operation name="getDriverrs">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -398,7 +390,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
+<operation name="getDriverr">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteDriverrs">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getMessages">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

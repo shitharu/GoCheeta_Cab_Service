@@ -31,9 +31,11 @@ public class ObjectFactory {
     private final static QName _GetVanResponse_QNAME = new QName("http://icbt/", "getVanResponse");
     private final static QName _AddCarResponse_QNAME = new QName("http://icbt/", "addCarResponse");
     private final static QName _GetCarsOnlyResponse_QNAME = new QName("http://icbt/", "getCarsOnlyResponse");
+    private final static QName _GetLocation_QNAME = new QName("http://icbt/", "getLocation");
     private final static QName _GetDriverrResponse_QNAME = new QName("http://icbt/", "getDriverrResponse");
     private final static QName _GetUserResponse_QNAME = new QName("http://icbt/", "getUserResponse");
     private final static QName _UpdateDriverrsResponse_QNAME = new QName("http://icbt/", "updateDriverrsResponse");
+    private final static QName _GetLocationResponse_QNAME = new QName("http://icbt/", "getLocationResponse");
     private final static QName _GetVansOnlyResponse_QNAME = new QName("http://icbt/", "getVansOnlyResponse");
     private final static QName _DeleteDriverrs_QNAME = new QName("http://icbt/", "deleteDriverrs");
     private final static QName _GetMessages_QNAME = new QName("http://icbt/", "getMessages");
@@ -75,6 +77,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLocationResponse }
+     * 
+     */
+    public GetLocationResponse createGetLocationResponse() {
+        return new GetLocationResponse();
+    }
+
+    /**
      * Create an instance of {@link GetDriverrResponse }
      * 
      */
@@ -112,6 +122,14 @@ public class ObjectFactory {
      */
     public GetCarsOnlyResponse createGetCarsOnlyResponse() {
         return new GetCarsOnlyResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLocation }
+     * 
+     */
+    public GetLocation createGetLocation() {
+        return new GetLocation();
     }
 
     /**
@@ -411,14 +429,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Car }
-     * 
-     */
-    public Car createCar() {
-        return new Car();
-    }
-
-    /**
      * Create an instance of {@link Contact }
      * 
      */
@@ -440,6 +450,14 @@ public class ObjectFactory {
      */
     public Driverr createDriverr() {
         return new Driverr();
+    }
+
+    /**
+     * Create an instance of {@link Car }
+     * 
+     */
+    public Car createCar() {
+        return new Car();
     }
 
     /**
@@ -514,6 +532,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLocation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getLocation")
+    public JAXBElement<GetLocation> createGetLocation(GetLocation value) {
+        return new JAXBElement<GetLocation>(_GetLocation_QNAME, GetLocation.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverrResponse }{@code >}}
      * 
      */
@@ -538,6 +565,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "updateDriverrsResponse")
     public JAXBElement<UpdateDriverrsResponse> createUpdateDriverrsResponse(UpdateDriverrsResponse value) {
         return new JAXBElement<UpdateDriverrsResponse>(_UpdateDriverrsResponse_QNAME, UpdateDriverrsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLocationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getLocationResponse")
+    public JAXBElement<GetLocationResponse> createGetLocationResponse(GetLocationResponse value) {
+        return new JAXBElement<GetLocationResponse>(_GetLocationResponse_QNAME, GetLocationResponse.class, null, value);
     }
 
     /**
