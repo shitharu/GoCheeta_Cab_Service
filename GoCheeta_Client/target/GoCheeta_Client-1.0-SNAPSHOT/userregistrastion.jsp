@@ -180,7 +180,7 @@ hr {
       
         <input type=submit value='SUBMIT' class="btn btn-success">
         
-        <input type=button value='CLOSE' class="btn btn-danger">
+        <a class="btn btn-danger" href="#.jsp" role="button">CLOSE</a>
         
         
       <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>

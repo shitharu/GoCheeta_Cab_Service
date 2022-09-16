@@ -99,9 +99,13 @@
 <xs:complexType name="driverr">
 <xs:sequence>
 <xs:element name="branch" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
 <xs:element name="id" type="xs:int"/>
 <xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
 <xs:element name="telno" type="xs:int"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicle" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

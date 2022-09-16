@@ -83,11 +83,12 @@ input[type=submit]:hover {
 
 /* Add a background color and some padding around the form */
 .container {
-  border-radius: 5px;
   background-color: #85C1E9;
   padding: 20px;
     
 }
+
+
     </style>
     
   </head>
@@ -131,11 +132,11 @@ input[type=submit]:hover {
       <p>If you want some details from us .. Here we are;</p>
       <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
       
-      <h1>Contact Now !!</h1>
+      <h2>Give Us Your Feedback</h2>
     </div>
         
     <div class="container">
-      <form action="processcontact.jsp" method="post">
+      <form action="processcontact.jsp" method="post" class="modal-content">
 
         ID
         <input type="text" id="id" name="id" placeholder="Your ID.."/>
@@ -146,8 +147,8 @@ input[type=submit]:hover {
         Mobile Number
         <input type="text" id="mobile" name="mobile" placeholder="Your mobile number.."/>
         
-        Message
-        <textarea id="message" name="message" placeholder="Write your message in here.." style="height:200px"></textarea>
+        Feedback Message
+        <textarea id="message" name="message" placeholder="Write your feedback in here.." style="height:200px"></textarea>
 
         <input type="submit" value="SUBMIT">
 

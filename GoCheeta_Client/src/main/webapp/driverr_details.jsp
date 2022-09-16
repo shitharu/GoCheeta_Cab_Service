@@ -4,11 +4,25 @@
     Author     : Tharushi Dhananjika
 --%>
 
+<%@page import="icbt.Van"%>
+<%@page import="icbt.Car"%>
+<%@page import="java.util.List"%>
 <%@page import="icbt.WebGoCheeta"%>
 <%@page import="icbt.WebGoCheeta_Service"%>
 <%@page import="lk.icbt.ng.web.client.UIGoCheeta"%>
 <%@page import="icbt.Driverr"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    WebGoCheeta_Service service = new WebGoCheeta_Service();
+    WebGoCheeta proxy = service.getWebGoCheetaPort();
+    
+    List<Driverr> driverrs = proxy.getDriverrs();
+    List<Car> cars = proxy.getCars();
+    List<Van> vans = proxy.getVans();
+        
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +35,57 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
         
+        
         <style>
+            
+.about-section {
+padding: 50px;
+text-align: center;
+background-color: #4d001f;
+color: white;
+}
+
+#table {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    }    
+
+p{
+    font-size: 18px;
+    color: #0088cc;
+}
+
+td
+{
+  width: 210px;
+}
+
+* {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+
+.body-text {
+display: flex;
+font-family: "Montserrat", sans-serif;
+align-items: center;
+justify-content: center;
+margin-top: 250px;
+}
+
+
+.heading {
+color: white;
+text-transform: uppercase;
+letter-spacing: 5px;
+font-size: 20px;
+}
+
+
+
             #result-section {
                 padding-top: 30px;
                 padding-right: 20px;
@@ -36,75 +100,144 @@
                 padding-left: 20px;
                 }
                 
-            #edit-section {
-                padding-top: 30px;
+            #msg-section{
+                padding-top: 5px;
                 padding-right: 20px;
-                padding-bottom: 30px;
-                padding-left: 20px;
-                }    
-                
+                padding-bottom: 5px;
+                padding-left: 40px;
+                outline-style: solid;
+                } 
+              
+.btn-success{
+    width: 100%;
+}
         </style>
+        
     </head>
     <body>
-        <%             
-          //  WebGoCheeta_Service service = new WebGoCheeta_Service();
-          //  WebGoCheeta proxy = //service.getWebGoCheetaPort();   
-                       
-        %>
-        <h1 align="center">GoCheeta</h1>
-        <hr>
-        <hr>
-        
-        <h3>Add Drivers</h3>
-
-        
-        <h3>Search, Update and Delete Drivers</h3>
-        <div id='control-section'>
-            <form action="index.jsp" method="post">
-                Driver ID : <input type="text" name="id"/>
-                            
-                <input type="submit" value="LOAD"> <br><br>
-                Name : <input type="text" name="name"/>
-                Tel_No : <input type="text" name="telno"/>
-                Branch : <input type="text" name="branch"/>
-                   
-                <input type="submit" value="UPDATE">
-                <input type="submit" value="DELETE"> <br>
-                
-            </form>
-        </div>
-        <hr>
-        
-        <h3>All Drivers</h3>
         <div id='result-section'>
-            <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
+        <h1 align="center">GoCheeta</h1>
+        <h2 align="center">Drivers and Travel Details</h2>
+        
+        <hr>
+        
+        <h3>Add Driver</h3>
+        <a class="btn btn-success" href="index.jsp" role="button">ADD DRIVER</a><br><br><hr>
+        
+        <h3>Add Travel Details</h3>
+        <a class="btn btn-success" href="#.jsp" role="button">ADD Travel Details</a><br><br><hr>
+        
+        <h2 align='center'>-- View All Drivers --</h2>
+        <table id='cars' class='table-bordered' style='width:100%'>
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Contact Number</th>
-                    <th>Branch</th>
-                </tr>
+                <th>Driver ID</th>
+                <th>Driver Name</th>
+                <th>Contact Number</th>
+                <th>Branch</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
             </thead>
-            <tbody>
-                <%       
-                       // if (request.getParameter("id") == null) {
-                         //   for(Driverr dvr :  proxy.getDriverrs()) {
-                         //       UIGoCheeta.printDriverrRows(dvr, out);
-                          //   }
-                       // } else {
-                      //      UIGoCheeta.printDriverrRows(proxy.getDriverr(Integer.parseInt(request.getParameter("id"))), out);
-                      //  }
-                %>
-            </tbody>
-        </table>
+        <tbody>
+            <% for(Driverr driver: driverrs){ %>
+            <tr>
+                <td><% out.print(driver.getId()); %></td>
+                <td><% out.print(driver.getName()); %></td>
+                <td><% out.print(driver.getTelno()); %></td>
+                <td><% out.print(driver.getBranch()); %></td>
+                <td>
+                    <a href="editdriverr.jsp?id=<% out.print(driver.getId()); %>">UPDATE</a>
+                </td>
+                
+                <td>
+                    <a href="deletedriverr.jsp?id=<% out.print(driver.getId()); %>">DELETE</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+        
+        
+        <br><br><hr>
+        <h2 align='center'>-- View All Car Travel Details --</h2>
+        <table id='car' class='table-bordered' style='width:100%'>
+            <thead>
+                <th>Car ID</th>
+                <th>Start City</th>
+                <th>End City</th>
+                <th>Destination</th>
+                <th>Price (Rs. )</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </thead>
+        <tbody>
+            <% for(Car car: cars){ %>
+            <tr>
+                <td><% out.print(car.getCarid()); %></td>
+                <td><% out.print(car.getStartcity()); %></td>
+                <td><% out.print(car.getEndcity()); %></td>
+                <td><% out.print(car.getDestination()); %></td>
+                <td><% out.print(car.getPrice()); %></td>
+                <td>
+                    <a href="editcar.jsp?id=<% out.print(car.getCarid()); %>">UPDATE</a>
+                </td>
+                
+                <td>
+                    <a href="deletecar.jsp?id=<% out.print(car.getCarid()); %>">DELETE</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+        
+        
+        <br><br><hr>
+        <h2 align='center'>-- View All Van Travel Details --</h2>
+        <table id='van' class='table-bordered' style='width:100%'>
+            <thead>
+                <th>Van ID</th>
+                <th>Start City</th>
+                <th>End City</th>
+                <th>Destination</th>
+                <th>Price (Rs. )</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </thead>
+        <tbody>
+            <% for(Van van: vans){ %>
+            <tr>
+                <td><% out.print(van.getVanid()); %></td>
+                <td><% out.print(van.getStartcity()); %></td>
+                <td><% out.print(van.getEndcity()); %></td>
+                <td><% out.print(van.getDestination()); %></td>
+                <td><% out.print(van.getPrice()); %></td>
+                <td>
+                    <a href="editvan.jsp?id=<% out.print(van.getVanid()); %>">UPDATE</a>
+                </td>
+                
+                <td>
+                    <a href="deletevan.jsp?id=<% out.print(van.getVanid()); %>">DELETE</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+        
+        
         </div>
         
-                <script>
-                    $(document).ready(function () {
-                        $('#driverrs').DataTable();
-                     });
-                </script>
+        <script>
+            $(document).ready(function () {
+                $('#cars').DataTable();
+             });
+             
+            $(document).ready(function () {
+                $('#car').DataTable();
+             });
+             
+             $(document).ready(function () {
+                $('#van').DataTable();
+             });
+        </script>
     </body>
 </html>
 

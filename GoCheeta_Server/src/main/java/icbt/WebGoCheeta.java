@@ -15,7 +15,6 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "WebGoCheeta")
 public class WebGoCheeta {
-
     /**
      * This is a sample web service operation
      */
@@ -49,11 +48,44 @@ public class WebGoCheeta {
         return gocheeta.updateDriverr(dvr);
     }
     
+    @WebMethod(operationName = "updateCar")
+    public boolean updateCar(@WebParam(name = "car")Car car){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.updateCar(car);
+    }
+    
+    @WebMethod(operationName = "updateVan")
+    public boolean updateVan(@WebParam(name = "van")Van van){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.updateVan(van);
+    }
+    
     @WebMethod(operationName = "deleteDriverrs")
     public boolean deleteDriverr(@WebParam(name = "id")int id){
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.deleteDriverr(id);
     }
+    
+    
+
+    @WebMethod(operationName = "getDriverrbyId")
+    public Driverr getDriverrbyId(@WebParam(name = "id") int id) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getDriverrbyId(id);
+    }
+    
+    @WebMethod(operationName = "getCarbyId")
+    public Car getCarbyId(@WebParam(name = "carid") int carid) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getCarbyId(carid);
+    }
+    
+    @WebMethod(operationName = "getVanbyId")
+    public Van getVanbyId(@WebParam(name = "vanid") int vanid) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getVanbyId(vanid);
+    }
+
     
     @WebMethod(operationName = "addUser")
     public boolean addUser(@WebParam(name = "user")User user){

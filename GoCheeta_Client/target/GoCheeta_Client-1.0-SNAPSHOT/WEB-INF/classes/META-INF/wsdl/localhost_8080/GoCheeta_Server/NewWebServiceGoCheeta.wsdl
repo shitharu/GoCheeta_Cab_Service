@@ -22,29 +22,23 @@
 <message name="addDriverrResponse">
 <part name="parameters" element="tns:addDriverrResponse"/>
 </message>
-<message name="updateDriverrs">
-<part name="parameters" element="tns:updateDriverrs"/>
-</message>
-<message name="updateDriverrsResponse">
-<part name="parameters" element="tns:updateDriverrsResponse"/>
-</message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
-</message>
 <message name="deleteDriverrs">
 <part name="parameters" element="tns:deleteDriverrs"/>
 </message>
 <message name="deleteDriverrsResponse">
 <part name="parameters" element="tns:deleteDriverrsResponse"/>
 </message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"/>
+<message name="getDriverrs">
+<part name="parameters" element="tns:getDriverrs"/>
 </message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"/>
+<message name="getDriverrsResponse">
+<part name="parameters" element="tns:getDriverrsResponse"/>
+</message>
+<message name="updateDriverrs">
+<part name="parameters" element="tns:updateDriverrs"/>
+</message>
+<message name="updateDriverrsResponse">
+<part name="parameters" element="tns:updateDriverrsResponse"/>
 </message>
 <message name="getDriverr">
 <part name="parameters" element="tns:getDriverr"/>
@@ -52,11 +46,17 @@
 <message name="getDriverrResponse">
 <part name="parameters" element="tns:getDriverrResponse"/>
 </message>
-<message name="getDriverrs">
-<part name="parameters" element="tns:getDriverrs"/>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
 </message>
-<message name="getDriverrsResponse">
-<part name="parameters" element="tns:getDriverrsResponse"/>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"/>
+</message>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"/>
 </message>
 <portType name="NewWebServiceGoCheeta">
 <operation name="addUser">
@@ -71,29 +71,29 @@
 <input wsam:Action="http://icbt/NewWebServiceGoCheeta/addDriverrRequest" message="tns:addDriverr"/>
 <output wsam:Action="http://icbt/NewWebServiceGoCheeta/addDriverrResponse" message="tns:addDriverrResponse"/>
 </operation>
-<operation name="updateDriverrs">
-<input wsam:Action="http://icbt/NewWebServiceGoCheeta/updateDriverrsRequest" message="tns:updateDriverrs"/>
-<output wsam:Action="http://icbt/NewWebServiceGoCheeta/updateDriverrsResponse" message="tns:updateDriverrsResponse"/>
-</operation>
-<operation name="hello">
-<input wsam:Action="http://icbt/NewWebServiceGoCheeta/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://icbt/NewWebServiceGoCheeta/helloResponse" message="tns:helloResponse"/>
-</operation>
 <operation name="deleteDriverrs">
 <input wsam:Action="http://icbt/NewWebServiceGoCheeta/deleteDriverrsRequest" message="tns:deleteDriverrs"/>
 <output wsam:Action="http://icbt/NewWebServiceGoCheeta/deleteDriverrsResponse" message="tns:deleteDriverrsResponse"/>
 </operation>
-<operation name="getUsers">
-<input wsam:Action="http://icbt/NewWebServiceGoCheeta/getUsersRequest" message="tns:getUsers"/>
-<output wsam:Action="http://icbt/NewWebServiceGoCheeta/getUsersResponse" message="tns:getUsersResponse"/>
+<operation name="getDriverrs">
+<input wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrsRequest" message="tns:getDriverrs"/>
+<output wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrsResponse" message="tns:getDriverrsResponse"/>
+</operation>
+<operation name="updateDriverrs">
+<input wsam:Action="http://icbt/NewWebServiceGoCheeta/updateDriverrsRequest" message="tns:updateDriverrs"/>
+<output wsam:Action="http://icbt/NewWebServiceGoCheeta/updateDriverrsResponse" message="tns:updateDriverrsResponse"/>
 </operation>
 <operation name="getDriverr">
 <input wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrRequest" message="tns:getDriverr"/>
 <output wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrResponse" message="tns:getDriverrResponse"/>
 </operation>
-<operation name="getDriverrs">
-<input wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrsRequest" message="tns:getDriverrs"/>
-<output wsam:Action="http://icbt/NewWebServiceGoCheeta/getDriverrsResponse" message="tns:getDriverrsResponse"/>
+<operation name="hello">
+<input wsam:Action="http://icbt/NewWebServiceGoCheeta/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://icbt/NewWebServiceGoCheeta/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="getUsers">
+<input wsam:Action="http://icbt/NewWebServiceGoCheeta/getUsersRequest" message="tns:getUsers"/>
+<output wsam:Action="http://icbt/NewWebServiceGoCheeta/getUsersResponse" message="tns:getUsersResponse"/>
 </operation>
 </portType>
 <binding name="NewWebServiceGoCheetaPortBinding" type="tns:NewWebServiceGoCheeta">
@@ -125,24 +125,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="updateDriverrs">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="deleteDriverrs">
 <soap:operation soapAction=""/>
 <input>
@@ -152,7 +134,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getUsers">
+<operation name="getDriverrs">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateDriverrs">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -170,7 +161,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getDriverrs">
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUsers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -129,8 +129,8 @@ hr {
         <div class="container">
           <form action="process_driverr.jsp" method="post">
             
-              <h1>Register Here,</h1>
-              <h4>Please fill in this form to create a new user account.</h4>
+              <h1>Driver Registration Here,</h1>
+              <h4>Please fill in this form to create a new driver account.</h4>
               <hr>
 
               <b>ID</b>
@@ -158,11 +158,13 @@ hr {
               <input type="Password" id="password" placeholder="Enter password" name="password"  required>             
 
                 <input type=submit value='SUBMIT' class="btn btn-success">
+                
+                
+                <br><br>
 
             </form>
-            <a href="index.html">
-                <button class="btn btn-danger">CLOSE</button>
-            </a>
+            <a class="btn btn-danger" href="index.html" role="button">CLOSE</a><br><br>
+            
             <br><br>
             <h5 align="right">By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
             </div>

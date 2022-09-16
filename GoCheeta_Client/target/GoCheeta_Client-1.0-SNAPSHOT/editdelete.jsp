@@ -169,7 +169,7 @@ hr {
         </div>
         <hr>
         
-        <h3>All Drivers</h3>
+        <h3>Car Details</h3>
         <div id='result-section'>
             <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
             <thead>

@@ -15,8 +15,12 @@
     dvr.setVehicle(request.getParameter("vehicle"));
     dvr.setPassword(request.getParameter("password"));
     dvr.setEmail(request.getParameter("email"));
-    proxy.addDriverr(dvr);
-    response.sendRedirect("index.jsp");
+    //proxy.addDriverr(dvr);
+   // response.sendRedirect("index.jsp");
     
-
+if(proxy.addDriverr(dvr)) {   
+   response.sendRedirect("index.html");
+}else {
+    out.print("false");
+}
 %>
