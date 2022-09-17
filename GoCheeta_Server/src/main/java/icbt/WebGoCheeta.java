@@ -60,6 +60,12 @@ public class WebGoCheeta {
         return gocheeta.updateVan(van);
     }
     
+    @WebMethod(operationName = "deleteUser")
+    public boolean deleteUser(@WebParam(name = "id")int id){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.deleteUser(id);
+    }
+    
     @WebMethod(operationName = "deleteDriverrs")
     public boolean deleteDriverr(@WebParam(name = "id")int id){
         DBGoCheeta gocheeta = new DBGoCheeta();
@@ -78,7 +84,11 @@ public class WebGoCheeta {
         return gocheeta.deleteVan(vanid);
     }
     
-    
+    @WebMethod(operationName = "getUserbyId")
+    public User getUserbyId(@WebParam(name = "id") int id) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getUserbyId(id);
+    }
 
     @WebMethod(operationName = "getDriverrbyId")
     public Driverr getDriverrbyId(@WebParam(name = "id") int id) {
@@ -207,6 +217,23 @@ public class WebGoCheeta {
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.getLocation(carid);
     }
+    
+    @WebMethod(operationName = "addpaymentcar")
+    public boolean addpaymentcar(@WebParam(name = "payment")Payment payment){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.addpaymentcar(payment);
+    }
+    
+    @WebMethod(operationName = "getCarPayments")
+    public List<Payment> getCarPayments(){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getCarPayments();
+    }
+
+    
+    
+    
+    
     
 //    @WebMethod(operationName = "addCarr")
 //    public boolean addCarr(@WebParam(name = "car")Car car){

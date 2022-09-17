@@ -173,8 +173,9 @@ hr {
         
         <a class="btn btn-danger" href="#.jsp" role="button">CLOSE</a>
         
-        
-      <h5>By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
+        <br><h5>If he user wants to cancel own account, if there are problems related to the account,
+            it is necessary to contact the admin.</h5>
+        <h5>Contact in here; <a href="contact.jsp">Contact</a>.</h5>
 
     </div>
   </form>

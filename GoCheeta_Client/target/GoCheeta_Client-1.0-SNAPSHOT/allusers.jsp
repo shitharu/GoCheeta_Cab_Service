@@ -4,6 +4,7 @@
     Author     : Tharushi Dhananjika
 --%>
 
+<%@page import="java.util.List"%>
 <%@page import="icbt.WebGoCheeta"%>
 <%@page import="icbt.WebGoCheeta_Service"%>
 <%@page import="lk.icbt.ng.web.client.UIUsers"%>
@@ -12,6 +13,14 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    WebGoCheeta_Service service = new WebGoCheeta_Service();
+    WebGoCheeta proxy = service.getWebGoCheetaPort();
+    
+    List<User> users = proxy.getUsers();
+        
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -72,7 +81,7 @@ p{
                 outline-style: solid;
                 }   
 
-                .btn-info{
+.btn-success{
     width: 100%;
     height: 70px;
 }
@@ -81,13 +90,6 @@ p{
         
     </head>
     <body>
-        
-        <%             
-            WebGoCheeta_Service service = new WebGoCheeta_Service();
-            WebGoCheeta proxy = service.getWebGoCheetaPort();   
-                       
-        %>
-        
         
         <div class="about-section">
       
@@ -110,16 +112,19 @@ p{
         </div>
         
         <br>
-            <h5 align= "center" id='msg-section'><b>  You Can Insert and Register User.
+            <h4 align= "center" id='msg-section'>
+                    <b>  You Can Insert user's details and Register User.
                     <br><br> You Can Delete Users.
                     <br><br> But, Sorry .. You Can't Update User Details Because of Some Security Issues. 
                     <br><br> Thank You ..</b>
-            </h5>
+            </h4>
         
-        <a class="btn btn-info" href="userregistrastion.jsp" role="button"><br>USER REGISTRATION</a><br><br><hr>
+        <a class="btn btn-success" href="userregistrastion.jsp" role="button"><br>USER REGISTRATION</a><br><br><hr>
+        
+        <h2 align="center">All User's Details</h2>
         
         <div id='result-section'>
-            <table id='users' class='table table-striped table-bordered' style='width:100%'> 
+            <table id='users' class='table-bordered' style='width:100%'> 
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -127,22 +132,33 @@ p{
                     <th>NIC</th>
                     <th>Address</th>
                     <th>Email</th>
-                    <th>MObile</th>
+                    <th>Contact Number</th>
                     <th>ID</th>
                     <th>Username</th>
                     <th>Password</th>
+                    <th>DELETE</th>
                 </tr>
             </thead>
             <tbody>
-                <%       
-                        if (request.getParameter("id") == null) {
-                            for(User user :  proxy.getUsers()) {
-                                UIUsers.printUsersRows(user, out);
-                             }
-                        } else {
-                            UIUsers.printUsersRows(proxy.getUser(Integer.parseInt(request.getParameter("id"))), out);
-                        }
-                %>
+                <% for(User user: users){ %>
+                    <tr>
+                        <td><% out.print(user.getFirstname()); %></td>
+                        <td><% out.print(user.getLastname()); %></td>
+                        <td><% out.print(user.getNic()); %></td>
+                        <td><% out.print(user.getAddress()); %></td>
+                        <td><% out.print(user.getEmail()); %></td>
+                        <td><% out.print(user.getMobile()); %></td>
+                        <td><% out.print(user.getId()); %></td>
+                        <td><% out.print(user.getUsername()); %></td>
+                        <td><% out.print(user.getPassword()); %></td>
+                      
+                        <td>
+                            <a href="deleteuser.jsp?id=<% out.print(user.getId()); %>">DELETE</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                       
+                        
             </tbody>
         </table>
         </div>

@@ -34,6 +34,7 @@ public class ObjectFactory {
     private final static QName _GetMessages_QNAME = new QName("http://icbt/", "getMessages");
     private final static QName _AddDriverrResponse_QNAME = new QName("http://icbt/", "addDriverrResponse");
     private final static QName _AuthCustomerDResponse_QNAME = new QName("http://icbt/", "authCustomerDResponse");
+    private final static QName _GetCarPaymentsResponse_QNAME = new QName("http://icbt/", "getCarPaymentsResponse");
     private final static QName _AuthCustomerA_QNAME = new QName("http://icbt/", "authCustomerA");
     private final static QName _GetCar_QNAME = new QName("http://icbt/", "getCar");
     private final static QName _GetDriverrsResponse_QNAME = new QName("http://icbt/", "getDriverrsResponse");
@@ -52,9 +53,13 @@ public class ObjectFactory {
     private final static QName _AuthCustomerResponse_QNAME = new QName("http://icbt/", "authCustomerResponse");
     private final static QName _DeleteCar_QNAME = new QName("http://icbt/", "deleteCar");
     private final static QName _HelloResponse_QNAME = new QName("http://icbt/", "helloResponse");
+    private final static QName _AddpaymentcarResponse_QNAME = new QName("http://icbt/", "addpaymentcarResponse");
     private final static QName _UpdateVanResponse_QNAME = new QName("http://icbt/", "updateVanResponse");
+    private final static QName _GetCarPayments_QNAME = new QName("http://icbt/", "getCarPayments");
+    private final static QName _GetUserbyIdResponse_QNAME = new QName("http://icbt/", "getUserbyIdResponse");
     private final static QName _GetMessagesResponse_QNAME = new QName("http://icbt/", "getMessagesResponse");
     private final static QName _Hello_QNAME = new QName("http://icbt/", "hello");
+    private final static QName _DeleteUser_QNAME = new QName("http://icbt/", "deleteUser");
     private final static QName _GetUser_QNAME = new QName("http://icbt/", "getUser");
     private final static QName _AddCar_QNAME = new QName("http://icbt/", "addCar");
     private final static QName _AuthCustomer_QNAME = new QName("http://icbt/", "authCustomer");
@@ -79,9 +84,12 @@ public class ObjectFactory {
     private final static QName _DeleteDriverrsResponse_QNAME = new QName("http://icbt/", "deleteDriverrsResponse");
     private final static QName _GetVansOnly_QNAME = new QName("http://icbt/", "getVansOnly");
     private final static QName _GetDriverrs_QNAME = new QName("http://icbt/", "getDriverrs");
+    private final static QName _Addpaymentcar_QNAME = new QName("http://icbt/", "addpaymentcar");
+    private final static QName _GetUserbyId_QNAME = new QName("http://icbt/", "getUserbyId");
     private final static QName _GetDriverrbyId_QNAME = new QName("http://icbt/", "getDriverrbyId");
     private final static QName _GetCars_QNAME = new QName("http://icbt/", "getCars");
     private final static QName _AddVan_QNAME = new QName("http://icbt/", "addVan");
+    private final static QName _DeleteUserResponse_QNAME = new QName("http://icbt/", "deleteUserResponse");
     private final static QName _GetUsersResponse_QNAME = new QName("http://icbt/", "getUsersResponse");
     private final static QName _AddContactUs_QNAME = new QName("http://icbt/", "addContactUs");
 
@@ -154,6 +162,14 @@ public class ObjectFactory {
      */
     public AuthCustomerDResponse createAuthCustomerDResponse() {
         return new AuthCustomerDResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCarPaymentsResponse }
+     * 
+     */
+    public GetCarPaymentsResponse createGetCarPaymentsResponse() {
+        return new GetCarPaymentsResponse();
     }
 
     /**
@@ -301,11 +317,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetUserbyIdResponse }
+     * 
+     */
+    public GetUserbyIdResponse createGetUserbyIdResponse() {
+        return new GetUserbyIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCarPayments }
+     * 
+     */
+    public GetCarPayments createGetCarPayments() {
+        return new GetCarPayments();
+    }
+
+    /**
      * Create an instance of {@link UpdateVanResponse }
      * 
      */
     public UpdateVanResponse createUpdateVanResponse() {
         return new UpdateVanResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddpaymentcarResponse }
+     * 
+     */
+    public AddpaymentcarResponse createAddpaymentcarResponse() {
+        return new AddpaymentcarResponse();
     }
 
     /**
@@ -322,6 +362,14 @@ public class ObjectFactory {
      */
     public DeleteCar createDeleteCar() {
         return new DeleteCar();
+    }
+
+    /**
+     * Create an instance of {@link DeleteUser }
+     * 
+     */
+    public DeleteUser createDeleteUser() {
+        return new DeleteUser();
     }
 
     /**
@@ -541,6 +589,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Addpaymentcar }
+     * 
+     */
+    public Addpaymentcar createAddpaymentcar() {
+        return new Addpaymentcar();
+    }
+
+    /**
+     * Create an instance of {@link GetUserbyId }
+     * 
+     */
+    public GetUserbyId createGetUserbyId() {
+        return new GetUserbyId();
+    }
+
+    /**
      * Create an instance of {@link GetDriverrs }
      * 
      */
@@ -565,6 +629,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteUserResponse }
+     * 
+     */
+    public DeleteUserResponse createDeleteUserResponse() {
+        return new DeleteUserResponse();
+    }
+
+    /**
      * Create an instance of {@link GetUsersResponse }
      * 
      */
@@ -578,6 +650,14 @@ public class ObjectFactory {
      */
     public Contact createContact() {
         return new Contact();
+    }
+
+    /**
+     * Create an instance of {@link Payment }
+     * 
+     */
+    public Payment createPayment() {
+        return new Payment();
     }
 
     /**
@@ -700,6 +780,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "authCustomerDResponse")
     public JAXBElement<AuthCustomerDResponse> createAuthCustomerDResponse(AuthCustomerDResponse value) {
         return new JAXBElement<AuthCustomerDResponse>(_AuthCustomerDResponse_QNAME, AuthCustomerDResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCarPaymentsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getCarPaymentsResponse")
+    public JAXBElement<GetCarPaymentsResponse> createGetCarPaymentsResponse(GetCarPaymentsResponse value) {
+        return new JAXBElement<GetCarPaymentsResponse>(_GetCarPaymentsResponse_QNAME, GetCarPaymentsResponse.class, null, value);
     }
 
     /**
@@ -865,12 +954,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddpaymentcarResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "addpaymentcarResponse")
+    public JAXBElement<AddpaymentcarResponse> createAddpaymentcarResponse(AddpaymentcarResponse value) {
+        return new JAXBElement<AddpaymentcarResponse>(_AddpaymentcarResponse_QNAME, AddpaymentcarResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateVanResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://icbt/", name = "updateVanResponse")
     public JAXBElement<UpdateVanResponse> createUpdateVanResponse(UpdateVanResponse value) {
         return new JAXBElement<UpdateVanResponse>(_UpdateVanResponse_QNAME, UpdateVanResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCarPayments }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getCarPayments")
+    public JAXBElement<GetCarPayments> createGetCarPayments(GetCarPayments value) {
+        return new JAXBElement<GetCarPayments>(_GetCarPayments_QNAME, GetCarPayments.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserbyIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getUserbyIdResponse")
+    public JAXBElement<GetUserbyIdResponse> createGetUserbyIdResponse(GetUserbyIdResponse value) {
+        return new JAXBElement<GetUserbyIdResponse>(_GetUserbyIdResponse_QNAME, GetUserbyIdResponse.class, null, value);
     }
 
     /**
@@ -889,6 +1005,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "hello")
     public JAXBElement<Hello> createHello(Hello value) {
         return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "deleteUser")
+    public JAXBElement<DeleteUser> createDeleteUser(DeleteUser value) {
+        return new JAXBElement<DeleteUser>(_DeleteUser_QNAME, DeleteUser.class, null, value);
     }
 
     /**
@@ -1108,6 +1233,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Addpaymentcar }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "addpaymentcar")
+    public JAXBElement<Addpaymentcar> createAddpaymentcar(Addpaymentcar value) {
+        return new JAXBElement<Addpaymentcar>(_Addpaymentcar_QNAME, Addpaymentcar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserbyId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "getUserbyId")
+    public JAXBElement<GetUserbyId> createGetUserbyId(GetUserbyId value) {
+        return new JAXBElement<GetUserbyId>(_GetUserbyId_QNAME, GetUserbyId.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverrbyId }{@code >}}
      * 
      */
@@ -1132,6 +1275,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://icbt/", name = "addVan")
     public JAXBElement<AddVan> createAddVan(AddVan value) {
         return new JAXBElement<AddVan>(_AddVan_QNAME, AddVan.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://icbt/", name = "deleteUserResponse")
+    public JAXBElement<DeleteUserResponse> createDeleteUserResponse(DeleteUserResponse value) {
+        return new JAXBElement<DeleteUserResponse>(_DeleteUserResponse_QNAME, DeleteUserResponse.class, null, value);
     }
 
     /**

@@ -1,4 +1,5 @@
 icbt\WebGoCheeta.class
+icbt\Payment.class
 icbt\Van.class
 icbt\User.class
 icbt\LoginServlet.class

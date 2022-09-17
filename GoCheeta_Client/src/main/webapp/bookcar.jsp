@@ -6,6 +6,7 @@
 
 
 
+<%@page import="java.util.List"%>
 <%@page import="icbt.Car"%>
 <%@page import="lk.icbt.ng.web.client.UICar"%>
 <%@page import="icbt.WebGoCheeta"%>
@@ -124,9 +125,15 @@ hr {
 </style>
 </head>
 <body>
-    <%             
+    <%          
+        
             WebGoCheeta_Service service = new WebGoCheeta_Service();
-            WebGoCheeta proxy = service.getWebGoCheetaPort();   
+            WebGoCheeta proxy = service.getWebGoCheetaPort();
+            
+            List<Car> cars = proxy.getCars();
+            
+        
+%>  
                        
     %>
     
@@ -152,7 +159,6 @@ hr {
     
 
     <div class="container">
-        <form action="bookcar.jsp" method="post">
   
         <h1>All Car Travels</h1>
             <table id='table' class='table table-striped table-bordered' style='width:100%'> 
@@ -166,15 +172,22 @@ hr {
                 </tr>
             </thead>
             <tbody>
-                <%       
-                    if (request.getParameter("id") == null) {
-                        for(Car car :  proxy.getCars()) {
-                            UICar.printCarRows(car, out);
-                         }
-                    } else {
-                        UICar.printCarRows(proxy.getLocation(Integer.parseInt(request.getParameter("id"))), out);
-                    }
-                %>
+                
+                <% for(Car car: cars){ %>
+                    <tr>
+                        <td><% out.print(car.getCarid()); %></td>
+                        <td><% out.print(car.getStartcity()); %></td>
+                        <td><% out.print(car.getEndcity()); %></td>
+                        <td><% out.print(car.getDestination()); %></td>
+                        <td><% out.print(car.getPrice()); %></td>
+                        <td>
+                            <a href="carpayment.jsp?id=<% out.print(car.getCarid()); %>">BOOKING</a>
+                        </td>
+                        
+                    </tr>
+                    <% } %>
+                    
+                  
             </tbody>
         </table>
         
@@ -187,23 +200,12 @@ hr {
                 </script>
         
         
-        <h1>Find Your Path in here:</h1>
         <hr>
 
-        <b>Enter Car ID</b>
-        <input type="text" placeholder="id" name="id" required>
         
-        <!-- comment id <input type="text" name="id" id="id"><br><br>
-        start city <input type="text" name="startcity" id="startcity"><br><br>
-        end city <input type="text" name="endcity" id="endcity"><br><br>
-        destination <input type="text" name="destination" id="destination"><br><br>
-        price <input type="text" name="price" id="price"><br><br >-->
-    
-        <input type="submit" value="SEARCH" class="btn btn-success"> <br><br>
-        
-        <h3>Your Payment Will Be Processed According to the Price List mentioned Above. In Addition to that;</h3><br>
+        <h3>Your Payment Will Be Processed According to the mentioned Above. In Addition to that;</h3><br>
               
-       <h4><span class="fa fa-star checked">&nbsp; Waiting fee is Rs. 200 per hour.</span></h4>
+       <h4><span class="fa fa-star checked">&nbsp; Waiting fee will calculate.</span></h4>
         <h4><span class="fa fa-star checked">&nbsp; Discount are given for special people and dates.</span></h4>
         <h4><span class="fa fa-star">&nbsp; Provide a comfortable destination.</span></h4>
         <h4><span class="fa fa-star">&nbsp; Don't be rude.</span></h4>
@@ -216,8 +218,7 @@ hr {
       <h5 align="right">By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
       <hr>
       
-      
-      </form>
+    
   </div>
 
 

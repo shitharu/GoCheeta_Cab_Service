@@ -87,7 +87,35 @@ public class DBGoCheeta {
         return driverrs;
     }
     
- 
+    public User getUserbyId(int id) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            this.stmt  = conn.createStatement();
+            this.rs    = this.stmt.executeQuery("SELECT * FROM users WHERE users.id = " + id);
+            
+            if(rs.next()) {
+                User user = new User();
+                
+                user.setFirstname(rs.getString("firstname"));
+                user.setLastname(rs.getString("lastname"));
+                user.setNic(rs.getString("nic"));
+                user.setAddress(rs.getString("address"));
+                user.setMobile(rs.getInt("mobile"));
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                
+                return user;
+            } else {
+                return null;
+            }
+            
+        } catch(ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
     
     public Driverr getDriverrbyId(int id) {
         try {
@@ -236,7 +264,6 @@ public class DBGoCheeta {
         return rowAffected > 0;
     }
     
-    
     public boolean deleteDriverr(int id){
         int rowAffected = 0;
         try{
@@ -245,6 +272,25 @@ public class DBGoCheeta {
             Statement statement = conn.createStatement();
             
             rowAffected = statement.executeUpdate("DELETE FROM `driverrs` WHERE (`id` = '" + id + "');");
+               
+            //System.err.println(resultSet.getString("name"));
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return rowAffected > 0;
+    }
+    
+    public boolean deleteUser(int id){
+        int rowAffected = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            rowAffected = statement.executeUpdate("DELETE FROM `users` WHERE (`id` = '" + id + "');");
                
             //System.err.println(resultSet.getString("name"));
             
@@ -761,6 +807,54 @@ public class DBGoCheeta {
         }
         return rowAffected > 0;
     }
+ 
+    public boolean addpaymentcar(Payment payment){
+        int rowAffected = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            rowAffected = statement.executeUpdate("INSERT INTO `carpayment` VALUES (" + payment.getId() + ",'" + payment.getName() + "','" + payment.getStartcity() + "','" + payment.getEndcity() + "'," + payment.getPrice()+ ",'" + payment.getDestination() + "','" + payment.getFeedback() + "')");
+           
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return rowAffected > 0;
+    }
     
+    public List<Payment> getCarPayments(){
+        
+        List<Payment> carpayments = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);          
+            Statement statement = conn.createStatement();
+            
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM carpayment");
+    
+            while(resultSet.next()){
+                Payment payment = new Payment();
+                
+                payment.setId(resultSet.getInt("id"));
+                payment.setName(resultSet.getString("name"));
+                payment.setStartcity(resultSet.getString("startcity"));
+                payment.setEndcity(resultSet.getString("endcity"));
+                payment.setPrice(resultSet.getInt("price"));
+                payment.setDestination(resultSet.getString("destination"));
+                payment.setFeedback(resultSet.getString("feedback"));
+                carpayments.add(payment);
+            }
+            
+        }catch(ClassNotFoundException | SQLException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
+        return carpayments;
+    }
 }
 

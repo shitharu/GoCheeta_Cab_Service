@@ -4,6 +4,7 @@
     Author     : Tharushi Dhananjika
 --%>
 
+<%@page import="icbt.Payment"%>
 <%@page import="icbt.Van"%>
 <%@page import="icbt.Car"%>
 <%@page import="java.util.List"%>
@@ -20,6 +21,7 @@
     List<Driverr> driverrs = proxy.getDriverrs();
     List<Car> cars = proxy.getCars();
     List<Van> vans = proxy.getVans();
+    List<Payment> carpayments = proxy.getCarPayments();
         
 %>
 
@@ -232,6 +234,42 @@ font-size: 20px;
         </tbody>
     </table>
         
+         <br><br><hr>
+        <h2 align='center'>-- View All Car Booking Details --</h2>
+       
+        <a class="btn btn-success" href="insertvantravel.jsp" role="button"><br>ADD VAN TRAVEL DETAILS</a><br><br><hr>
+        
+        <table id='carpayment' class='table-bordered' style='width:100%'>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Start City</th>
+                <th>End City</th>
+                <th>Price</th>
+                <th>Destination</th>
+                <th>Feedback</th>
+                <th>DELETE</th>
+            </thead>
+        <tbody>
+            <% for(Payment payment: carpayments){ %>
+                    <tr>
+                        <td><% out.print(payment.getId()); %></td>
+                        <td><% out.print(payment.getName()); %></td>
+                        <td><% out.print(payment.getStartcity()); %></td>
+                        <td><% out.print(payment.getEndcity()); %></td>
+                        <td><% out.print(payment.getPrice()); %></td>
+                        <td><% out.print(payment.getDestination()); %></td>
+                        <td><% out.print(payment.getFeedback()); %></td>
+                        
+                        <td>
+                            <a href="#.jsp?id=<% out.print(payment.getId()); %>">DELETE</a>
+                        </td>
+                        
+                    </tr>
+                    <% } %>
+        </tbody>
+    </table>
+        
         
         </div>
         
@@ -244,9 +282,14 @@ font-size: 20px;
                 $('#car').DataTable();
              });
              
-             $(document).ready(function () {
+            $(document).ready(function () {
                 $('#van').DataTable();
              });
+            
+            $(document).ready(function () {
+                $('#carpayment').DataTable();
+             });
+             
         </script>
     </body>
 </html>

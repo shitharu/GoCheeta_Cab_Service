@@ -87,7 +87,10 @@ input[type=submit]:hover {
   padding: 20px;
     
 }
-
+.btn-success{
+    width: 100%;
+    height: 70px;
+}
 
     </style>
     
@@ -139,18 +142,18 @@ input[type=submit]:hover {
       <form action="processcontact.jsp" method="post" class="modal-content">
 
         ID
-        <input type="text" id="id" name="id" placeholder="Your ID.."/>
+        <input type="text" id="id" name="id" placeholder="Your ID.." required/>
           
         Name
-        <input type="text" id="name" name="name" placeholder="Your name.."/>
+        <input type="text" id="name" name="name" placeholder="Your name.." required/>
         
         Mobile Number
-        <input type="text" id="mobile" name="mobile" placeholder="Your mobile number.."/>
+        <input type="text" id="mobile" name="mobile" placeholder="Your mobile number.." required/>
         
-        Feedback Message
-        <textarea id="message" name="message" placeholder="Write your feedback in here.." style="height:200px"></textarea>
+        Message
+        <textarea id="message" name="message" placeholder="Write your Message in here.." style="height:200px" required></textarea>
 
-        <input type="submit" value="SUBMIT">
+        <input type="submit" class="btn btn-success" value="SUBMIT">
 
       </form>
     </div>
