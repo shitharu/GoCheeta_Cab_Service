@@ -42,192 +42,33 @@ public interface WebGoCheeta {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<icbt.User>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUsers", targetNamespace = "http://icbt/", className = "icbt.GetUsers")
-    @ResponseWrapper(localName = "getUsersResponse", targetNamespace = "http://icbt/", className = "icbt.GetUsersResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getUsersRequest", output = "http://icbt/WebGoCheeta/getUsersResponse")
-    public List<User> getUsers();
-
-    /**
-     * 
-     * @param car
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addCar", targetNamespace = "http://icbt/", className = "icbt.AddCar")
-    @ResponseWrapper(localName = "addCarResponse", targetNamespace = "http://icbt/", className = "icbt.AddCarResponse")
-    @Action(input = "http://icbt/WebGoCheeta/addCarRequest", output = "http://icbt/WebGoCheeta/addCarResponse")
-    public boolean addCar(
-        @WebParam(name = "car", targetNamespace = "")
-        Car car);
-
-    /**
-     * 
-     * @param password
-     * @param email
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "authCustomer", targetNamespace = "http://icbt/", className = "icbt.AuthCustomer")
-    @ResponseWrapper(localName = "authCustomerResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerResponse")
-    @Action(input = "http://icbt/WebGoCheeta/authCustomerRequest", output = "http://icbt/WebGoCheeta/authCustomerResponse")
-    public boolean authCustomer(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param vancarid
-     * @return
-     *     returns icbt.Van
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVan", targetNamespace = "http://icbt/", className = "icbt.GetVan")
-    @ResponseWrapper(localName = "getVanResponse", targetNamespace = "http://icbt/", className = "icbt.GetVanResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getVanRequest", output = "http://icbt/WebGoCheeta/getVanResponse")
-    public Van getVan(
-        @WebParam(name = "vancarid", targetNamespace = "")
-        int vancarid);
-
-    /**
-     * 
-     * @param carid
-     * @return
-     *     returns icbt.Car
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCar", targetNamespace = "http://icbt/", className = "icbt.GetCar")
-    @ResponseWrapper(localName = "getCarResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getCarRequest", output = "http://icbt/WebGoCheeta/getCarResponse")
-    public Car getCar(
-        @WebParam(name = "carid", targetNamespace = "")
-        int carid);
-
-    /**
-     * 
-     * @param password
-     * @param email
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "authCustomerA", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerA")
-    @ResponseWrapper(localName = "authCustomerAResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerAResponse")
-    @Action(input = "http://icbt/WebGoCheeta/authCustomerARequest", output = "http://icbt/WebGoCheeta/authCustomerAResponse")
-    public boolean authCustomerA(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<icbt.Van>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVans", targetNamespace = "http://icbt/", className = "icbt.GetVans")
-    @ResponseWrapper(localName = "getVansResponse", targetNamespace = "http://icbt/", className = "icbt.GetVansResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getVansRequest", output = "http://icbt/WebGoCheeta/getVansResponse")
-    public List<Van> getVans();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<icbt.Driverr>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCarsOnly", targetNamespace = "http://icbt/", className = "icbt.GetCarsOnly")
-    @ResponseWrapper(localName = "getCarsOnlyResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarsOnlyResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getCarsOnlyRequest", output = "http://icbt/WebGoCheeta/getCarsOnlyResponse")
-    public List<Driverr> getCarsOnly();
-
-    /**
-     * 
      * @param id
      * @return
-     *     returns icbt.Driverr
+     *     returns icbt.User
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDriverrbyId", targetNamespace = "http://icbt/", className = "icbt.GetDriverrbyId")
-    @ResponseWrapper(localName = "getDriverrbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrbyIdResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getDriverrbyIdRequest", output = "http://icbt/WebGoCheeta/getDriverrbyIdResponse")
-    public Driverr getDriverrbyId(
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://icbt/", className = "icbt.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://icbt/", className = "icbt.GetUserResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getUserRequest", output = "http://icbt/WebGoCheeta/getUserResponse")
+    public User getUser(
         @WebParam(name = "id", targetNamespace = "")
         int id);
 
     /**
      * 
-     * @return
-     *     returns java.util.List<icbt.Car>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCars", targetNamespace = "http://icbt/", className = "icbt.GetCars")
-    @ResponseWrapper(localName = "getCarsResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarsResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getCarsRequest", output = "http://icbt/WebGoCheeta/getCarsResponse")
-    public List<Car> getCars();
-
-    /**
-     * 
-     * @param password
-     * @param email
+     * @param user
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "authCustomerD", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerD")
-    @ResponseWrapper(localName = "authCustomerDResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerDResponse")
-    @Action(input = "http://icbt/WebGoCheeta/authCustomerDRequest", output = "http://icbt/WebGoCheeta/authCustomerDResponse")
-    public boolean authCustomerD(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param cnt
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addContactUs", targetNamespace = "http://icbt/", className = "icbt.AddContactUs")
-    @ResponseWrapper(localName = "addContactUsResponse", targetNamespace = "http://icbt/", className = "icbt.AddContactUsResponse")
-    @Action(input = "http://icbt/WebGoCheeta/addContactUsRequest", output = "http://icbt/WebGoCheeta/addContactUsResponse")
-    public boolean addContactUs(
-        @WebParam(name = "cnt", targetNamespace = "")
-        Contact cnt);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<icbt.Driverr>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVansOnly", targetNamespace = "http://icbt/", className = "icbt.GetVansOnly")
-    @ResponseWrapper(localName = "getVansOnlyResponse", targetNamespace = "http://icbt/", className = "icbt.GetVansOnlyResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getVansOnlyRequest", output = "http://icbt/WebGoCheeta/getVansOnlyResponse")
-    public List<Driverr> getVansOnly();
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://icbt/", className = "icbt.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://icbt/", className = "icbt.AddUserResponse")
+    @Action(input = "http://icbt/WebGoCheeta/addUserRequest", output = "http://icbt/WebGoCheeta/addUserResponse")
+    public boolean addUser(
+        @WebParam(name = "user", targetNamespace = "")
+        User user);
 
     /**
      * 
@@ -246,21 +87,6 @@ public interface WebGoCheeta {
 
     /**
      * 
-     * @param id
-     * @return
-     *     returns icbt.Driverr
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDriverr", targetNamespace = "http://icbt/", className = "icbt.GetDriverr")
-    @ResponseWrapper(localName = "getDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getDriverrRequest", output = "http://icbt/WebGoCheeta/getDriverrResponse")
-    public Driverr getDriverr(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<icbt.Driverr>
      */
@@ -273,18 +99,18 @@ public interface WebGoCheeta {
 
     /**
      * 
-     * @param dvr
+     * @param id
      * @return
-     *     returns boolean
+     *     returns icbt.Driverr
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addDriverr", targetNamespace = "http://icbt/", className = "icbt.AddDriverr")
-    @ResponseWrapper(localName = "addDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.AddDriverrResponse")
-    @Action(input = "http://icbt/WebGoCheeta/addDriverrRequest", output = "http://icbt/WebGoCheeta/addDriverrResponse")
-    public boolean addDriverr(
-        @WebParam(name = "dvr", targetNamespace = "")
-        Driverr dvr);
+    @RequestWrapper(localName = "getDriverr", targetNamespace = "http://icbt/", className = "icbt.GetDriverr")
+    @ResponseWrapper(localName = "getDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getDriverrRequest", output = "http://icbt/WebGoCheeta/getDriverrResponse")
+    public Driverr getDriverr(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
 
     /**
      * 
@@ -318,6 +144,36 @@ public interface WebGoCheeta {
 
     /**
      * 
+     * @param dvr
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addDriverr", targetNamespace = "http://icbt/", className = "icbt.AddDriverr")
+    @ResponseWrapper(localName = "addDriverrResponse", targetNamespace = "http://icbt/", className = "icbt.AddDriverrResponse")
+    @Action(input = "http://icbt/WebGoCheeta/addDriverrRequest", output = "http://icbt/WebGoCheeta/addDriverrResponse")
+    public boolean addDriverr(
+        @WebParam(name = "dvr", targetNamespace = "")
+        Driverr dvr);
+
+    /**
+     * 
+     * @param van
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addVan", targetNamespace = "http://icbt/", className = "icbt.AddVan")
+    @ResponseWrapper(localName = "addVanResponse", targetNamespace = "http://icbt/", className = "icbt.AddVanResponse")
+    @Action(input = "http://icbt/WebGoCheeta/addVanRequest", output = "http://icbt/WebGoCheeta/addVanResponse")
+    public boolean addVan(
+        @WebParam(name = "van", targetNamespace = "")
+        Van van);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<icbt.Contact>
      */
@@ -327,66 +183,6 @@ public interface WebGoCheeta {
     @ResponseWrapper(localName = "getMessagesResponse", targetNamespace = "http://icbt/", className = "icbt.GetMessagesResponse")
     @Action(input = "http://icbt/WebGoCheeta/getMessagesRequest", output = "http://icbt/WebGoCheeta/getMessagesResponse")
     public List<Contact> getMessages();
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns icbt.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUser", targetNamespace = "http://icbt/", className = "icbt.GetUser")
-    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://icbt/", className = "icbt.GetUserResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getUserRequest", output = "http://icbt/WebGoCheeta/getUserResponse")
-    public User getUser(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param user
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addUser", targetNamespace = "http://icbt/", className = "icbt.AddUser")
-    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://icbt/", className = "icbt.AddUserResponse")
-    @Action(input = "http://icbt/WebGoCheeta/addUserRequest", output = "http://icbt/WebGoCheeta/addUserResponse")
-    public boolean addUser(
-        @WebParam(name = "user", targetNamespace = "")
-        User user);
-
-    /**
-     * 
-     * @param carid
-     * @return
-     *     returns icbt.Car
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCarbyId", targetNamespace = "http://icbt/", className = "icbt.GetCarbyId")
-    @ResponseWrapper(localName = "getCarbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarbyIdResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getCarbyIdRequest", output = "http://icbt/WebGoCheeta/getCarbyIdResponse")
-    public Car getCarbyId(
-        @WebParam(name = "carid", targetNamespace = "")
-        int carid);
-
-    /**
-     * 
-     * @param vanid
-     * @return
-     *     returns icbt.Van
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getVanbyId", targetNamespace = "http://icbt/", className = "icbt.GetVanbyId")
-    @ResponseWrapper(localName = "getVanbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetVanbyIdResponse")
-    @Action(input = "http://icbt/WebGoCheeta/getVanbyIdRequest", output = "http://icbt/WebGoCheeta/getVanbyIdResponse")
-    public Van getVanbyId(
-        @WebParam(name = "vanid", targetNamespace = "")
-        int vanid);
 
     /**
      * 
@@ -405,6 +201,225 @@ public interface WebGoCheeta {
 
     /**
      * 
+     * @param password
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "authCustomerD", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerD")
+    @ResponseWrapper(localName = "authCustomerDResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerDResponse")
+    @Action(input = "http://icbt/WebGoCheeta/authCustomerDRequest", output = "http://icbt/WebGoCheeta/authCustomerDResponse")
+    public boolean authCustomerD(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @param password
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "authCustomer", targetNamespace = "http://icbt/", className = "icbt.AuthCustomer")
+    @ResponseWrapper(localName = "authCustomerResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerResponse")
+    @Action(input = "http://icbt/WebGoCheeta/authCustomerRequest", output = "http://icbt/WebGoCheeta/authCustomerResponse")
+    public boolean authCustomer(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @param password
+     * @param email
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "authCustomerA", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerA")
+    @ResponseWrapper(localName = "authCustomerAResponse", targetNamespace = "http://icbt/", className = "icbt.AuthCustomerAResponse")
+    @Action(input = "http://icbt/WebGoCheeta/authCustomerARequest", output = "http://icbt/WebGoCheeta/authCustomerAResponse")
+    public boolean authCustomerA(
+        @WebParam(name = "email", targetNamespace = "")
+        String email,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<icbt.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUsers", targetNamespace = "http://icbt/", className = "icbt.GetUsers")
+    @ResponseWrapper(localName = "getUsersResponse", targetNamespace = "http://icbt/", className = "icbt.GetUsersResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getUsersRequest", output = "http://icbt/WebGoCheeta/getUsersResponse")
+    public List<User> getUsers();
+
+    /**
+     * 
+     * @param vancarid
+     * @return
+     *     returns icbt.Van
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVan", targetNamespace = "http://icbt/", className = "icbt.GetVan")
+    @ResponseWrapper(localName = "getVanResponse", targetNamespace = "http://icbt/", className = "icbt.GetVanResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getVanRequest", output = "http://icbt/WebGoCheeta/getVanResponse")
+    public Van getVan(
+        @WebParam(name = "vancarid", targetNamespace = "")
+        int vancarid);
+
+    /**
+     * 
+     * @param car
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addCar", targetNamespace = "http://icbt/", className = "icbt.AddCar")
+    @ResponseWrapper(localName = "addCarResponse", targetNamespace = "http://icbt/", className = "icbt.AddCarResponse")
+    @Action(input = "http://icbt/WebGoCheeta/addCarRequest", output = "http://icbt/WebGoCheeta/addCarResponse")
+    public boolean addCar(
+        @WebParam(name = "car", targetNamespace = "")
+        Car car);
+
+    /**
+     * 
+     * @param cnt
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addContactUs", targetNamespace = "http://icbt/", className = "icbt.AddContactUs")
+    @ResponseWrapper(localName = "addContactUsResponse", targetNamespace = "http://icbt/", className = "icbt.AddContactUsResponse")
+    @Action(input = "http://icbt/WebGoCheeta/addContactUsRequest", output = "http://icbt/WebGoCheeta/addContactUsResponse")
+    public boolean addContactUs(
+        @WebParam(name = "cnt", targetNamespace = "")
+        Contact cnt);
+
+    /**
+     * 
+     * @param vanid
+     * @return
+     *     returns icbt.Van
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVanbyId", targetNamespace = "http://icbt/", className = "icbt.GetVanbyId")
+    @ResponseWrapper(localName = "getVanbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetVanbyIdResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getVanbyIdRequest", output = "http://icbt/WebGoCheeta/getVanbyIdResponse")
+    public Van getVanbyId(
+        @WebParam(name = "vanid", targetNamespace = "")
+        int vanid);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<icbt.Car>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCars", targetNamespace = "http://icbt/", className = "icbt.GetCars")
+    @ResponseWrapper(localName = "getCarsResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarsResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getCarsRequest", output = "http://icbt/WebGoCheeta/getCarsResponse")
+    public List<Car> getCars();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<icbt.Driverr>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCarsOnly", targetNamespace = "http://icbt/", className = "icbt.GetCarsOnly")
+    @ResponseWrapper(localName = "getCarsOnlyResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarsOnlyResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getCarsOnlyRequest", output = "http://icbt/WebGoCheeta/getCarsOnlyResponse")
+    public List<Driverr> getCarsOnly();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<icbt.Driverr>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVansOnly", targetNamespace = "http://icbt/", className = "icbt.GetVansOnly")
+    @ResponseWrapper(localName = "getVansOnlyResponse", targetNamespace = "http://icbt/", className = "icbt.GetVansOnlyResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getVansOnlyRequest", output = "http://icbt/WebGoCheeta/getVansOnlyResponse")
+    public List<Driverr> getVansOnly();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<icbt.Van>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getVans", targetNamespace = "http://icbt/", className = "icbt.GetVans")
+    @ResponseWrapper(localName = "getVansResponse", targetNamespace = "http://icbt/", className = "icbt.GetVansResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getVansRequest", output = "http://icbt/WebGoCheeta/getVansResponse")
+    public List<Van> getVans();
+
+    /**
+     * 
+     * @param carid
+     * @return
+     *     returns icbt.Car
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCar", targetNamespace = "http://icbt/", className = "icbt.GetCar")
+    @ResponseWrapper(localName = "getCarResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getCarRequest", output = "http://icbt/WebGoCheeta/getCarResponse")
+    public Car getCar(
+        @WebParam(name = "carid", targetNamespace = "")
+        int carid);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns icbt.Driverr
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getDriverrbyId", targetNamespace = "http://icbt/", className = "icbt.GetDriverrbyId")
+    @ResponseWrapper(localName = "getDriverrbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetDriverrbyIdResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getDriverrbyIdRequest", output = "http://icbt/WebGoCheeta/getDriverrbyIdResponse")
+    public Driverr getDriverrbyId(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param carid
+     * @return
+     *     returns icbt.Car
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCarbyId", targetNamespace = "http://icbt/", className = "icbt.GetCarbyId")
+    @ResponseWrapper(localName = "getCarbyIdResponse", targetNamespace = "http://icbt/", className = "icbt.GetCarbyIdResponse")
+    @Action(input = "http://icbt/WebGoCheeta/getCarbyIdRequest", output = "http://icbt/WebGoCheeta/getCarbyIdResponse")
+    public Car getCarbyId(
+        @WebParam(name = "carid", targetNamespace = "")
+        int carid);
+
+    /**
+     * 
      * @param van
      * @return
      *     returns boolean
@@ -417,5 +432,35 @@ public interface WebGoCheeta {
     public boolean updateVan(
         @WebParam(name = "van", targetNamespace = "")
         Van van);
+
+    /**
+     * 
+     * @param vanid
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteVan", targetNamespace = "http://icbt/", className = "icbt.DeleteVan")
+    @ResponseWrapper(localName = "deleteVanResponse", targetNamespace = "http://icbt/", className = "icbt.DeleteVanResponse")
+    @Action(input = "http://icbt/WebGoCheeta/deleteVanRequest", output = "http://icbt/WebGoCheeta/deleteVanResponse")
+    public boolean deleteVan(
+        @WebParam(name = "vanid", targetNamespace = "")
+        int vanid);
+
+    /**
+     * 
+     * @param carid
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteCar", targetNamespace = "http://icbt/", className = "icbt.DeleteCar")
+    @ResponseWrapper(localName = "deleteCarResponse", targetNamespace = "http://icbt/", className = "icbt.DeleteCarResponse")
+    @Action(input = "http://icbt/WebGoCheeta/deleteCarRequest", output = "http://icbt/WebGoCheeta/deleteCarResponse")
+    public boolean deleteCar(
+        @WebParam(name = "carid", targetNamespace = "")
+        int carid);
 
 }

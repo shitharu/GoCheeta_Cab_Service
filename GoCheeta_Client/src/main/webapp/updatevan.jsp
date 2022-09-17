@@ -14,11 +14,11 @@
     WebGoCheeta_Service service = new WebGoCheeta_Service();
     WebGoCheeta proxy = service.getWebGoCheetaPort();  
     
-    int vanid  = Integer.parseInt(request.getParameter("van_id"));
-    String startcity     = request.getParameter("startcity");
-    String endcity    = request.getParameter("endcity");
+    int vanid             = Integer.parseInt(request.getParameter("van_id"));
+    String startcity      = request.getParameter("startcity");
+    String endcity        = request.getParameter("endcity");
     String destination    = request.getParameter("destination");
-    String price   = request.getParameter("price");
+    String price          = request.getParameter("price");
     
     Van van = new Van();
     
@@ -28,8 +28,6 @@
     van.setDestination(destination);
     van.setPrice(Integer.parseInt(price));
     
-
-
 if(proxy.updateVan(van)) {   
    response.sendRedirect("driverr_details.jsp");
 }else {

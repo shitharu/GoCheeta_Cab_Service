@@ -16,18 +16,16 @@
     <body>
         <%
 
-        
+            WebGoCheeta_Service service = new WebGoCheeta_Service();
+            WebGoCheeta proxy = service.getWebGoCheetaPort();
 
-        WebGoCheeta_Service service = new WebGoCheeta_Service();
-        WebGoCheeta proxy = service.getWebGoCheetaPort();
+            int id = Integer.parseInt(request.getParameter("id"));
 
-        int id = Integer.parseInt(request.getParameter("id"));
-        
-        if(proxy.deleteDriverrs(id)) {
-           response.sendRedirect("driverr_details.jsp");
-        }else {
-            out.print("false");
-        }
+            if(proxy.deleteDriverrs(id)) {
+               response.sendRedirect("driverr_details.jsp");
+            }else {
+                out.print("false");
+            }
 
     %>
     </body>

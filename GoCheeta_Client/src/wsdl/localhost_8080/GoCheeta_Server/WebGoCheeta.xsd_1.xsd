@@ -16,6 +16,10 @@
 
 <xs:element name="addUserResponse" type="tns:addUserResponse"/>
 
+<xs:element name="addVan" type="tns:addVan"/>
+
+<xs:element name="addVanResponse" type="tns:addVanResponse"/>
+
 <xs:element name="authCustomer" type="tns:authCustomer"/>
 
 <xs:element name="authCustomerA" type="tns:authCustomerA"/>
@@ -28,9 +32,17 @@
 
 <xs:element name="authCustomerResponse" type="tns:authCustomerResponse"/>
 
+<xs:element name="deleteCar" type="tns:deleteCar"/>
+
+<xs:element name="deleteCarResponse" type="tns:deleteCarResponse"/>
+
 <xs:element name="deleteDriverrs" type="tns:deleteDriverrs"/>
 
 <xs:element name="deleteDriverrsResponse" type="tns:deleteDriverrsResponse"/>
+
+<xs:element name="deleteVan" type="tns:deleteVan"/>
+
+<xs:element name="deleteVanResponse" type="tns:deleteVanResponse"/>
 
 <xs:element name="getCar" type="tns:getCar"/>
 
@@ -134,6 +146,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addUser">
+<xs:sequence>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addCar">
 <xs:sequence>
 <xs:element name="car" type="tns:car" minOccurs="0"/>
@@ -151,18 +175,6 @@
 </xs:complexType>
 
 <xs:complexType name="addCarResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addUser">
-<xs:sequence>
-<xs:element name="user" type="tns:user" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addUserResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -281,6 +293,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="authCustomerA">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authCustomerAResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getUsers">
 <xs:sequence/>
 </xs:complexType>
@@ -300,19 +325,6 @@
 <xs:complexType name="getCarResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:car" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="authCustomerA">
-<xs:sequence>
-<xs:element name="email" type="xs:string" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="authCustomerAResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -389,6 +401,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="deleteVan">
+<xs:sequence>
+<xs:element name="vanid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteVanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getCarbyId">
 <xs:sequence>
 <xs:element name="carid" type="xs:int"/>
@@ -453,13 +477,25 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="addContactUs">
+<xs:complexType name="addVan">
 <xs:sequence>
-<xs:element name="cnt" type="tns:contact" minOccurs="0"/>
+<xs:element name="van" type="tns:van" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="addContactUsResponse">
+<xs:complexType name="addVanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCar">
+<xs:sequence>
+<xs:element name="carid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -474,6 +510,18 @@
 <xs:complexType name="helloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addContactUs">
+<xs:sequence>
+<xs:element name="cnt" type="tns:contact" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addContactUsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -10,7 +10,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
-    int vanid = Integer.parseInt(request.getParameter("vanid"));
+    int vanid = Integer.parseInt(request.getParameter("id"));
     
     WebGoCheeta_Service service = new WebGoCheeta_Service();
     WebGoCheeta proxy = service.getWebGoCheetaPort(); 
@@ -61,7 +61,6 @@ p{
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -71,50 +70,39 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-/* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-/* Set a style for all buttons */
-
-
-
 .h2{
    text-align: center;
 } 
 
-
-
-/* Add padding to container elements */
 .container {
   padding: 20px;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 80%;
+  height: 80%; 
+  overflow: auto;
   background-color: #474e5d;
   padding-top: 50px;
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto; 
   border: 1px solid #888;
-  width: 90%; /* Could be more or less, depending on screen size */
+  width: 90%;
 }
 
-/* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;

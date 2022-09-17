@@ -110,6 +110,12 @@ font-size: 20px;
               
 .btn-success{
     width: 100%;
+    height: 70px;
+}
+
+.btn-info{
+    width: 100%;
+    height: 70px;
 }
         </style>
         
@@ -121,13 +127,11 @@ font-size: 20px;
         
         <hr>
         
-        <h3>Add Driver</h3>
-        <a class="btn btn-success" href="index.jsp" role="button">ADD DRIVER</a><br><br><hr>
-        
-        <h3>Add Travel Details</h3>
-        <a class="btn btn-success" href="#.jsp" role="button">ADD Travel Details</a><br><br><hr>
-        
+        <a class="btn btn-info" href="allusers.jsp" role="button"><br>ViEW ALL USERS</a><br><br><hr>
+  
         <h2 align='center'>-- View All Drivers --</h2>
+        <a class="btn btn-success" href="index.jsp" role="button"><br>ADD DRIVER</a><br><br><hr>
+        
         <table id='cars' class='table-bordered' style='width:100%'>
             <thead>
                 <th>Driver ID</th>
@@ -159,6 +163,9 @@ font-size: 20px;
         
         <br><br><hr>
         <h2 align='center'>-- View All Car Travel Details --</h2>
+        
+        <a class="btn btn-success" href="insertcartravel.jsp" role="button"><br>ADD CAR TRAVEL DETAILS    </a><br><br><hr>
+        
         <table id='car' class='table-bordered' style='width:100%'>
             <thead>
                 <th>Car ID</th>
@@ -192,6 +199,9 @@ font-size: 20px;
         
         <br><br><hr>
         <h2 align='center'>-- View All Van Travel Details --</h2>
+       
+        <a class="btn btn-success" href="insertvantravel.jsp" role="button"><br>ADD VAN TRAVEL DETAILS</a><br><br><hr>
+        
         <table id='van' class='table-bordered' style='width:100%'>
             <thead>
                 <th>Van ID</th>

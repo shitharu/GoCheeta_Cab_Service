@@ -64,22 +64,14 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Set a style for all buttons */
-
-
-
 .h2{
    text-align: center;
 } 
 
-
-
-/* Add padding to container elements */
 .container {
   padding: 20px;
 }
 
-/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -101,7 +93,6 @@ input[type=text]:focus, input[type=password]:focus {
   width: 90%; /* Could be more or less, depending on screen size */
 }
 
-/* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;

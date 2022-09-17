@@ -66,6 +66,18 @@ public class WebGoCheeta {
         return gocheeta.deleteDriverr(id);
     }
     
+    @WebMethod(operationName = "deleteCar")
+    public boolean deleteCar(@WebParam(name = "carid")int carid){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.deleteCar(carid);
+    }
+    
+    @WebMethod(operationName = "deleteVan")
+    public boolean deleteVan(@WebParam(name = "vanid")int vanid){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.deleteVan(vanid);
+    }
+    
     
 
     @WebMethod(operationName = "getDriverrbyId")
@@ -115,6 +127,12 @@ public class WebGoCheeta {
     public boolean addCar(@WebParam(name = "car")Car car){
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.addCar(car);
+    }
+    
+    @WebMethod(operationName = "addVan")
+    public boolean addVan(@WebParam(name = "van")Van van){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.addVan(van);
     }
     
     @WebMethod(operationName = "getCar")
@@ -189,4 +207,16 @@ public class WebGoCheeta {
         DBGoCheeta gocheeta = new DBGoCheeta();
         return gocheeta.getLocation(carid);
     }
+    
+//    @WebMethod(operationName = "addCarr")
+//    public boolean addCarr(@WebParam(name = "car")Car car){
+//        DBGoCheeta gocheeta = new DBGoCheeta();
+//        return gocheeta.addCarr(car);
+//    }
+    
+//    @WebMethod(operationName = "addVann")
+//    public boolean addVann(@WebParam(name = "van")Van van){
+//        DBGoCheeta gocheeta = new DBGoCheeta();
+//        return gocheeta.addVann(van);
+//    }
 }

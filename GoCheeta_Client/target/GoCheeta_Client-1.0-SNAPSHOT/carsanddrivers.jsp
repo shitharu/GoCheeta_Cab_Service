@@ -28,10 +28,10 @@
         <style>
             
 .about-section {
-padding: 50px;
-text-align: center;
-background-color: #4d001f;
-color: white;
+  padding: 50px;
+  text-align: center;
+  background-color: #4d001f;
+  color: white;
 }
 
 #table {
@@ -39,11 +39,10 @@ color: white;
     padding-right: 20px;
     padding-bottom: 30px;
     padding-left: 75px;
-    }    
+} 
 
 p{
     font-size: 18px;
-    color: #0088cc;
 }
 
 td
@@ -129,10 +128,11 @@ background-color: #FF007F;
                 outline-style: solid;
                 } 
                 
+                
         </style>
         
     </head>
-    <body style="background-color:#99c2ff;">
+    <body style="background-color:pink;">
         <nav>
             
             <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
@@ -161,11 +161,16 @@ background-color: #FF007F;
             WebGoCheeta proxy = service.getWebGoCheetaPort();   
                        
         %>
-        <h1 align="center">GOCHEETA CARS AND DRIVERS</h1>
-   
         
-        <h2 align="center">TRAVEL DETAILS  -   CARS</h2>
-        <hr>
+        <div class="about-section">
+            <h1>_ GOCHEETA CARS AND DRIVER DETAILS _</h1>
+
+            <p>Hello We Are GoCheeta Cab Service.</p>
+            <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
+
+            <h1>WELCOME !!</h1>
+        </div>
+        
         
      <br><br>
         <h3 align="center">CAR DETAILS</h3>
@@ -197,9 +202,10 @@ background-color: #FF007F;
         </div>
             <h3 align="center">DRIVER DETAILS</h3>
             <br>
-            <h5 id='msg-section'><b>WELCOME.. You can call any Car driver's mobile number, for your travel.
+            <h5 id='msg-section'><b>You can call any Car driver's mobile number, for your travel.
                     <br><br> They are register in one of their branches, but they are ready to come to any place for the tours you call.
-                If they cannot be contacted at that moment, someone else will. Thank You ..</b></h5>
+                If they cannot be contacted at that moment, someone else will.
+                <br><br>Thank You ..</b></h5>
         
             
             <div id='result-section'>

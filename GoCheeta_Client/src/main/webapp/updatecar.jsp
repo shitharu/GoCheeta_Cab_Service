@@ -27,8 +27,6 @@
     car.setDestination(destination);
     car.setPrice(Integer.parseInt(price));
     
-
-
 if(proxy.updateCar(car)) {   
    response.sendRedirect("driverr_details.jsp");
 }else {

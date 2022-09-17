@@ -14,8 +14,10 @@
     car.setDestination(request.getParameter("destination"));
     car.setPrice(Integer.parseInt(request.getParameter("price")));
     
-    proxy.addCar(car);
-    response.sendRedirect("carsanddrivers.jsp");
     
-
+if(proxy.addCar(car)) {   
+   response.sendRedirect("driverr_details.jsp");
+}else {
+    out.print("false");
+}
 %>

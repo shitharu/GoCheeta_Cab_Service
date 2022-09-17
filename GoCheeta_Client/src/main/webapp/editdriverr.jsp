@@ -128,8 +128,6 @@ hr {
           <h1>Driver Update Details Form,</h1>
           <h4>Please fill in this to update driver details.</h4>
           <hr>
-        
-        
 
             <label for="name">Your Name</label><br>
             <input type="text" id="name" name="name" placeholder="Name" value="<% out.print(driverr.getName()); %>"><br>

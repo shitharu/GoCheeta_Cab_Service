@@ -45,7 +45,6 @@
 
 p{
     font-size: 18px;
-    color: #0088cc;
 }
 
 td
@@ -136,7 +135,7 @@ background-color: #FF007F;
         </style>
         
     </head>
-    <body style="background-color:#99c2ff;">
+    <body style="background-color:pink;">
         <nav>
 
             <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
@@ -165,12 +164,14 @@ background-color: #FF007F;
             WebGoCheeta proxy = service.getWebGoCheetaPort();   
                        
         %>
-        <h1 align="center">GOCHEETA VANS AND DRIVERS</h1>
-    
-        
-        <h2 align="center">TRAVEL DETAILS  -   VANS</h2>
-        <hr>
-        <br><br>
+        <div class="about-section">
+            <h1>_ GOCHEETA VANS AND DRIVER DETAILS _</h1>
+
+            <p>Hello We Are GoCheeta Cab Service.</p>
+            <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
+
+            <h1>WELCOME !!</h1>
+        </div>
      
         <h3 align="center">VAN DETAILS</h3>
         <div id='result-section'>
@@ -200,9 +201,10 @@ background-color: #FF007F;
         </div>
             <h3 align="center">DRIVER DETAILS</h3>
             <br>
-            <h5 id='msg-section'><b>WELCOME.. You can call any Van driver's mobile number, for your travel.
+            <h5 id='msg-section'><b>You can call any Van driver's mobile number, for your travel.
                     <br><br>They are register in one of their branches, but they are ready to come to any place for the tours you call.
-                If they cannot be contacted at that moment, someone else will. Thank You ..</b></h5>
+                If they cannot be contacted at that moment, someone else will.
+                    <br><br>Thank You ..</b></h5>
             <div id='result-section'>
             <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
             <thead>
