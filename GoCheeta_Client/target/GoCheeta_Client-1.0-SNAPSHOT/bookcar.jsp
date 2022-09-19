@@ -6,6 +6,8 @@
 
 
 
+<%@page import="lk.icbt.ng.web.client.UIGoCheeta"%>
+<%@page import="icbt.Driverr"%>
 <%@page import="java.util.List"%>
 <%@page import="icbt.Car"%>
 <%@page import="lk.icbt.ng.web.client.UICar"%>
@@ -20,33 +22,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>User Registration</title>
-    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>BOOKING CAR</title>
+        
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+        
+        
+        <style>
+            
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #1A5276;
+  background-color: #4d001f;
   color: white;
-}
-
-p{
-    font-family: Arial;
-    font-size: 18px;
-    color: #9FE2BF;
-}
-
-.btn-success{
-    width: 100%;
-}
-
-.btn-danger{
-    width: 100%;
 }
 
 #table {
@@ -56,73 +49,95 @@ p{
     padding-left: 75px;
 } 
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+p{
+    font-size: 18px;
 }
 
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+td
+{
+  width: 210px;
 }
 
-/* Set a style for all buttons */
-
-
-
-.h2{
-   text-align: center;
-} 
-
-
-
-/* Add padding to container elements */
-.container {
-  padding: 20px;
+* {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
+.body-text {
+display: flex;
+font-family: "Montserrat", sans-serif;
+align-items: center;
+justify-content: center;
+margin-top: 250px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 90%; /* Could be more or less, depending on screen size */
+nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+min-height: 8vh;
+background-color: #BF0060;
+font-family: "Montserrat", sans-serif;
 }
 
-.checked {
-  color: orange;
+.heading {
+color: white;
+text-transform: uppercase;
+letter-spacing: 5px;
+font-size: 20px;
 }
 
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.nav-links {
+display: flex;
+justify-content: space-around;
+width: 30%;
 }
 
-</style>
+.nav-links li {
+list-style: none;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+letter-spacing: 3px;
+font-weight: bold;
+font-size: 14px;
+padding: 14px 16px;
+}
+
+.nav-links a:hover:not(.active) {
+background-color: #FF007F;
+}
+
+.nav-links li a.active {
+background-color: #FF007F;
+}
+            #result-section {
+                padding-top: 30px;
+                padding-right: 20px;
+                padding-bottom: 30px;
+                padding-left: 20px;
+                }
+                
+            #control-section {
+                padding-top: 30px;
+                padding-right: 20px;
+                padding-bottom: 30px;
+                padding-left: 20px;
+                }
+                
+            #msg-section{
+                padding-top: 5px;
+                padding-right: 20px;
+                padding-bottom: 5px;
+                padding-left: 40px;
+                outline-style: solid;
+                } 
+                
+                
+        </style>
 </head>
 <body>
     <%          
@@ -134,34 +149,46 @@ hr {
             
         
 %>  
-                       
-    %>
-    
-    <div class="about-section">
-      
-        <div id='table'> 
-        <table>
-          <tr>
-            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
-            <td>
-                <h1>_ CAR BOOKING _</h1>
-      
-                <p>We Are GoCheeta Cab Service</p>
-                <p>We Provide You With a Very Comfortable Travel Experience. Best Cab Service in Sri Lanka.</p>
 
-                <h1>BOOKING !!</h1>
-            </td>
-            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
-          </tr>
-        </table>
+   
+        <nav>
+            
+            <img src="gocheeta.png" alt="GoCheeta LOGO" width="80" height="80">
+
+            <div class="heading">
+
+                <a href="index.html"><i class="fa fa-home"></i></a>
+                <h4>GoCheeta - CARS</h4>
+
+            </div>
+
+            <ul class="nav-links">
+
+              <li><a href="booking.html">BOOKING</a></li>
+
+              <li><a class="active" href="bookcar.jsp">CAR</a></li>
+
+              <li><a href="bookvan.jsp">VAN</a></li>
+
+            </ul>
+
+          </nav>
+
+
+          <div class="about-section">
+            <h1>_ GOCHEETA CAR DETAILS _</h1>
+
+            <p>Hello We Are GoCheeta Cab Service.</p>
+            <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
+
+            <h1>CAR BOOKING</h1>
         </div>
-    </div>
     
-
-    <div class="container">
   
-        <h1>All Car Travels</h1>
-            <table id='table' class='table table-striped table-bordered' style='width:100%'> 
+    <div class="container">
+  <br>
+        <h1 align="center">All Car Travels</h1>
+            <table id='cars' class='table table-striped table-bordered' style='width:100%'> 
             <thead>
                 <tr>
                     <th>Car ID</th>
@@ -169,6 +196,7 @@ hr {
                     <th>End City</th>
                     <th>Destination</th>
                     <th>Price</th>
+                    <th>BOOKING</th>
                 </tr>
             </thead>
             <tbody>
@@ -189,13 +217,42 @@ hr {
                     
                   
             </tbody>
+            </table><br><br><br><br>
+                  
+        <h1 align="center">All Car Driver Travels</h1>
+        <div id='result-section'>
+            <table id='driverrs' class='table table-striped table-bordered' style='width:100%'> 
+            <thead>
+                <tr>
+                    <th>Driver ID</th>
+                    <th>Driver Name</th>
+                    <th>Contact Number</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%       
+                    if (request.getParameter("id") == null) {
+                        for(Driverr dvr :  proxy.getCarsOnly()) {
+                            UIGoCheeta.printDriverrRows(dvr, out);
+                         }
+                    } else {
+                        //
+                    }
+                %>
+            </tbody>
         </table>
+        </div>
         
                 <script>
                     
-                     $(document).ready(function () {
-                        $('#cars').DataTable();
-                     });
+                    $(document).ready(function () {
+                       $('#cars').DataTable();
+                    });
+                    
+                    $(document).ready(function () {
+                        $('#drivers').DataTable();
+                    });
                                              
                 </script>
         
@@ -205,7 +262,7 @@ hr {
         
         <h3>Your Payment Will Be Processed According to the mentioned Above. In Addition to that;</h3><br>
               
-       <h4><span class="fa fa-star checked">&nbsp; Waiting fee will calculate.</span></h4>
+        <h4><span class="fa fa-star checked">&nbsp; Waiting fee will calculate.</span></h4>
         <h4><span class="fa fa-star checked">&nbsp; Discount are given for special people and dates.</span></h4>
         <h4><span class="fa fa-star">&nbsp; Provide a comfortable destination.</span></h4>
         <h4><span class="fa fa-star">&nbsp; Don't be rude.</span></h4>
@@ -213,14 +270,44 @@ hr {
 
       <hr>
       <h3 align="right">Thank You ..</h3>
-      <hr>
+      
       
       <h5 align="right">By creating an account you can feel our services from <a href="services.html">Services</a>.</h5>
       <hr>
+      </div>
+            
+      <div class="about-section">
       
-    
-  </div>
-
+        <div id='table'> 
+        <table>
+          <tr>
+            <td><img src="gocheeta.png" alt="GoCheeta LOGO" width="150" height="150"></td>
+            <td>
+                <a href="index.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Home<br>
+                <a href="booking.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Booking<br>
+                <a href="about.html"><i class="fa-regular fa-hand" ></i></a> &nbsp About<br>
+                <a href="services.html"><i class="fa-regular fa-hand" ></i></a> &nbsp Services<br>
+                <a href="contact.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Contact Us<br>
+            </td>
+            <td>
+                <a href="login.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Login<br>
+                <a href="signup.jsp"><i class="fa-regular fa-hand" ></i></a> &nbsp Sign Up<br>
+            </td>
+            <td>Customer Service:<br>
+                +94 76 000 0000<br><br>
+                
+                Email:<br>
+                  gocheeta@gmail.com
+            
+            </td>
+            <td>
+                2022 GoCheeta<br>
+                All Rights Reserved.<br>
+            </td>
+          </tr>
+        </table>
+        </div>
+    </div>
 
 
 </body>

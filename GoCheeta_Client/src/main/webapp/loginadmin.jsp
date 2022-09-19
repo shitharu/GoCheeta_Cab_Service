@@ -15,10 +15,8 @@
         
     if(customerPoxy.authCustomerA(email, password)) {
         response.sendRedirect("driverr_details.jsp");
-    
-        //out.print("login pass <br>need to redirect to customer dashboard");
     } else {
-        out.print("login failed");
+        response.sendRedirect("index.html");
     }
 
 

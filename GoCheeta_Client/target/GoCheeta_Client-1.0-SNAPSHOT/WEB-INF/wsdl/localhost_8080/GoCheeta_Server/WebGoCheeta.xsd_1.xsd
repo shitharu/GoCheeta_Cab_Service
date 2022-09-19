@@ -24,6 +24,10 @@
 
 <xs:element name="addpaymentcarResponse" type="tns:addpaymentcarResponse"/>
 
+<xs:element name="addpaymentvan" type="tns:addpaymentvan"/>
+
+<xs:element name="addpaymentvanResponse" type="tns:addpaymentvanResponse"/>
+
 <xs:element name="authCustomer" type="tns:authCustomer"/>
 
 <xs:element name="authCustomerA" type="tns:authCustomerA"/>
@@ -40,6 +44,10 @@
 
 <xs:element name="deleteCarResponse" type="tns:deleteCarResponse"/>
 
+<xs:element name="deleteCarTravel" type="tns:deleteCarTravel"/>
+
+<xs:element name="deleteCarTravelResponse" type="tns:deleteCarTravelResponse"/>
+
 <xs:element name="deleteDriverrs" type="tns:deleteDriverrs"/>
 
 <xs:element name="deleteDriverrsResponse" type="tns:deleteDriverrsResponse"/>
@@ -51,6 +59,10 @@
 <xs:element name="deleteVan" type="tns:deleteVan"/>
 
 <xs:element name="deleteVanResponse" type="tns:deleteVanResponse"/>
+
+<xs:element name="deleteVanTravel" type="tns:deleteVanTravel"/>
+
+<xs:element name="deleteVanTravelResponse" type="tns:deleteVanTravelResponse"/>
 
 <xs:element name="getCar" type="tns:getCar"/>
 
@@ -92,6 +104,14 @@
 
 <xs:element name="getMessagesResponse" type="tns:getMessagesResponse"/>
 
+<xs:element name="getTravelCarbyId" type="tns:getTravelCarbyId"/>
+
+<xs:element name="getTravelCarbyIdResponse" type="tns:getTravelCarbyIdResponse"/>
+
+<xs:element name="getTravelVanbyId" type="tns:getTravelVanbyId"/>
+
+<xs:element name="getTravelVanbyIdResponse" type="tns:getTravelVanbyIdResponse"/>
+
 <xs:element name="getUser" type="tns:getUser"/>
 
 <xs:element name="getUserResponse" type="tns:getUserResponse"/>
@@ -105,6 +125,10 @@
 <xs:element name="getUsersResponse" type="tns:getUsersResponse"/>
 
 <xs:element name="getVan" type="tns:getVan"/>
+
+<xs:element name="getVanPayments" type="tns:getVanPayments"/>
+
+<xs:element name="getVanPaymentsResponse" type="tns:getVanPaymentsResponse"/>
 
 <xs:element name="getVanResponse" type="tns:getVanResponse"/>
 
@@ -136,6 +160,18 @@
 
 <xs:element name="updateVanResponse" type="tns:updateVanResponse"/>
 
+<xs:complexType name="deleteVanTravel">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteVanTravelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getUser">
 <xs:sequence>
 <xs:element name="id" type="xs:int"/>
@@ -162,6 +198,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addUser">
+<xs:sequence>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addCar">
 <xs:sequence>
 <xs:element name="car" type="tns:car" minOccurs="0"/>
@@ -179,18 +227,6 @@
 </xs:complexType>
 
 <xs:complexType name="addCarResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addUser">
-<xs:sequence>
-<xs:element name="user" type="tns:user" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addUserResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -221,6 +257,25 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getMessages">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMessagesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:contact" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contact">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="updateDriverrs">
 <xs:sequence>
 <xs:element name="dvr" type="tns:driverr" minOccurs="0"/>
@@ -243,25 +298,6 @@
 <xs:complexType name="updateDriverrsResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getMessages">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getMessagesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:contact" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="contact">
-<xs:sequence>
-<xs:element name="id" type="xs:int"/>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
-<xs:element name="mobile" type="xs:int"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -319,6 +355,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getCar">
+<xs:sequence>
+<xs:element name="carid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:car" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="authCustomerA">
 <xs:sequence>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
@@ -329,18 +377,6 @@
 <xs:complexType name="authCustomerAResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCar">
-<xs:sequence>
-<xs:element name="carid" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCarResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:car" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -381,13 +417,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="updateCar">
+<xs:complexType name="deleteCarTravel">
 <xs:sequence>
-<xs:element name="car" type="tns:car" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="updateCarResponse">
+<xs:complexType name="deleteCarTravelResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -400,6 +436,18 @@
 </xs:complexType>
 
 <xs:complexType name="addDriverrResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCar">
+<xs:sequence>
+<xs:element name="car" type="tns:car" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -426,6 +474,30 @@
 <xs:complexType name="deleteVanResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTravelCarbyId">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTravelCarbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:payment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="payment">
+<xs:sequence>
+<xs:element name="destination" type="xs:string" minOccurs="0"/>
+<xs:element name="endcity" type="xs:string" minOccurs="0"/>
+<xs:element name="feedback" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:int"/>
+<xs:element name="startcity" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -461,6 +533,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addpaymentcar">
+<xs:sequence>
+<xs:element name="payment" type="tns:payment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addpaymentcarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getUserbyId">
 <xs:sequence>
 <xs:element name="id" type="xs:int"/>
@@ -470,30 +554,6 @@
 <xs:complexType name="getUserbyIdResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:user" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addpaymentcar">
-<xs:sequence>
-<xs:element name="payment" type="tns:payment" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="payment">
-<xs:sequence>
-<xs:element name="destination" type="xs:string" minOccurs="0"/>
-<xs:element name="endcity" type="xs:string" minOccurs="0"/>
-<xs:element name="feedback" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:int"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="price" type="xs:int"/>
-<xs:element name="startcity" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addpaymentcarResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -553,6 +613,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getTravelVanbyId">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTravelVanbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:payment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getCarPayments">
 <xs:sequence/>
 </xs:complexType>
@@ -560,6 +632,18 @@
 <xs:complexType name="getCarPaymentsResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:payment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addpaymentvan">
+<xs:sequence>
+<xs:element name="payment" type="tns:payment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addpaymentvanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -575,6 +659,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addContactUs">
 <xs:sequence>
 <xs:element name="cnt" type="tns:contact" minOccurs="0"/>
@@ -587,15 +683,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="hello">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="getVanPayments">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="helloResponse">
+<xs:complexType name="getVanPaymentsResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="tns:payment" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

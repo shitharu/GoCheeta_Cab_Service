@@ -14,9 +14,9 @@
     WebGoCheeta customerPoxy = service.getWebGoCheetaPort();
         
     if(customerPoxy.authCustomerD(email, password)) {
-        out.print("login pass <br>need to redirect to customer dashboard");
+        response.sendRedirect("about.html");
     } else {
-        out.print("login failed");
+        response.sendRedirect("index.html");
     }
 
 

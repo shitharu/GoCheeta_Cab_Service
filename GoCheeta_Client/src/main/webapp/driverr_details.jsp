@@ -22,6 +22,7 @@
     List<Car> cars = proxy.getCars();
     List<Van> vans = proxy.getVans();
     List<Payment> carpayments = proxy.getCarPayments();
+    List<Payment> vanpayments = proxy.getVanPayments();
         
 %>
 
@@ -237,8 +238,6 @@ font-size: 20px;
          <br><br><hr>
         <h2 align='center'>-- View All Car Booking Details --</h2>
        
-        <a class="btn btn-success" href="insertvantravel.jsp" role="button"><br>ADD VAN TRAVEL DETAILS</a><br><br><hr>
-        
         <table id='carpayment' class='table-bordered' style='width:100%'>
             <thead>
                 <th>ID</th>
@@ -262,7 +261,42 @@ font-size: 20px;
                         <td><% out.print(payment.getFeedback()); %></td>
                         
                         <td>
-                            <a href="#.jsp?id=<% out.print(payment.getId()); %>">DELETE</a>
+                            <a href="deletecartravel.jsp?id=<% out.print(payment.getId()); %>">DELETE</a>
+                        </td>
+                        
+                    </tr>
+                    <% } %>
+        </tbody>
+    </table>
+        
+        
+         <br><br><hr>
+        <h2 align='center'>-- View All Van Booking Details --</h2>
+       
+        <table id='vanpayment' class='table-bordered' style='width:100%'>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Start City</th>
+                <th>End City</th>
+                <th>Price</th>
+                <th>Destination</th>
+                <th>Feedback</th>
+                <th>DELETE</th>
+            </thead>
+        <tbody>
+            <% for(Payment payment: vanpayments){ %>
+                    <tr>
+                        <td><% out.print(payment.getId()); %></td>
+                        <td><% out.print(payment.getName()); %></td>
+                        <td><% out.print(payment.getStartcity()); %></td>
+                        <td><% out.print(payment.getEndcity()); %></td>
+                        <td><% out.print(payment.getPrice()); %></td>
+                        <td><% out.print(payment.getDestination()); %></td>
+                        <td><% out.print(payment.getFeedback()); %></td>
+                        
+                        <td>
+                            <a href="deletevantravel.jsp?id=<% out.print(payment.getId()); %>">DELETE</a>
                         </td>
                         
                     </tr>
@@ -288,6 +322,10 @@ font-size: 20px;
             
             $(document).ready(function () {
                 $('#carpayment').DataTable();
+             });
+             
+            $(document).ready(function () {
+                $('#vanpayment').DataTable();
              });
              
         </script>

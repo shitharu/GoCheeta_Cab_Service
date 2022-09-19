@@ -10,21 +10,16 @@
 <%
     String email = request.getParameter("email");
     String password = request.getParameter("password");
-    
-   // String emailD = request.getParameter("email");
-   // String passwordD = request.getParameter("password");
-    
+        
     WebGoCheeta_Service service = new WebGoCheeta_Service();
     WebGoCheeta customerPoxy = service.getWebGoCheetaPort();
         
     if(customerPoxy.authCustomer(email, password)) {
-        //if(customerPoxy.authCustomerD(emailD, passwordD)) {
-            out.print("login pass <br>need to redirect to customer dashboard");
-       // }    
+        response.sendRedirect("booking.html");   
     } else {
-        out.print("login failed");
+        response.sendRedirect("index.html");
     }
-
+ 
 
 %>
 

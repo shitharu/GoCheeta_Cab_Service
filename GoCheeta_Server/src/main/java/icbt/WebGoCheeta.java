@@ -78,6 +78,18 @@ public class WebGoCheeta {
         return gocheeta.deleteCar(carid);
     }
     
+    @WebMethod(operationName = "deleteCarTravel")
+    public boolean deleteCarTravel(@WebParam(name = "id")int id){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.deleteCarTravel(id);
+    }
+    
+    @WebMethod(operationName = "deleteVanTravel")
+    public boolean deleteVanTravel(@WebParam(name = "id")int id){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.deleteVanTravel(id);
+    }
+    
     @WebMethod(operationName = "deleteVan")
     public boolean deleteVan(@WebParam(name = "vanid")int vanid){
         DBGoCheeta gocheeta = new DBGoCheeta();
@@ -108,6 +120,17 @@ public class WebGoCheeta {
         return gocheeta.getVanbyId(vanid);
     }
 
+    @WebMethod(operationName = "getTravelCarbyId")
+    public Payment getTravelCarbyId(@WebParam(name = "id") int id) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getTravelCarbyId(id);
+    }
+    
+    @WebMethod(operationName = "getTravelVanbyId")
+    public Payment getTravelVanbyId(@WebParam(name = "id") int id) {
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getTravelVanbyId(id);
+    }
     
     @WebMethod(operationName = "addUser")
     public boolean addUser(@WebParam(name = "user")User user){
@@ -230,6 +253,19 @@ public class WebGoCheeta {
         return gocheeta.getCarPayments();
     }
 
+    
+    @WebMethod(operationName = "addpaymentvan")
+    public boolean addpaymentvan(@WebParam(name = "payment")Payment payment){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.addpaymentvan(payment);
+    }
+    
+    @WebMethod(operationName = "getVanPayments")
+    public List<Payment> getVanPayments(){
+        DBGoCheeta gocheeta = new DBGoCheeta();
+        return gocheeta.getVanPayments();
+    }
+    
     
     
     
