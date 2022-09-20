@@ -21,7 +21,8 @@ import java.util.List;
 
 public class DBGoCheeta {
     
-    static final String DB_URL = "jdbc:mysql://localhost/gocheeta?allowPublicKeyRetrieval=true&useSSL=false";
+    static final String DB_URL =
+        "jdbc:mysql://localhost/gocheeta?allowPublicKeyRetrieval=true&useSSL=false";
     static final String USER = "root";
     static final String PASS = "1007@wpTd";
     

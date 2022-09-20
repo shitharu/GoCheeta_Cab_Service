@@ -135,7 +135,7 @@ input[type=submit]:hover {
       <p>If you want some details from us .. Here we are;</p>
       <p>We'll Get You There. Best Cab Service in Sri Lanka.</p>
       
-      <h2>Give Us Your Feedback</h2>
+      <h2>Send Message</h2>
     </div>
         
     <div class="container">
